@@ -7,3 +7,5 @@ RUN apt-get update \
  && mkdir -p /usr/local/apache2/conf/extra/  \
  && curl -o /usr/local/apache2/conf/extra/vh-www-common.inc -SL https://svn.eionet.europa.eu/repositories/Zope/trunk/www.eea.europa.eu/trunk/etc/apache/vh-www-common.inc \
  && curl -o /usr/local/apache2/conf/extra/vh-www-staging.conf -SL https://svn.eionet.europa.eu/repositories/Zope/trunk/www.eea.europa.eu/trunk/etc/apache/vh-www-staging.conf
+
+COPY docker-setup.sh /docker-setup.sh
