@@ -8,6 +8,7 @@ RUN apt-get update \
  && curl -o /var/eea-buildout-plone4/etc/scripts/apache_syslog -SL http://svn.eionet.europa.eu/repositories/Zope/trunk/www.eea.europa.eu/trunk/etc/scripts/apache_syslog \
  && curl -o /var/eea-buildout-plone4/etc/apache/vh-www-common.inc -SL https://svn.eionet.europa.eu/repositories/Zope/trunk/www.eea.europa.eu/trunk/etc/apache/vh-www-common.inc \
  && curl -o /usr/local/apache2/conf/extra/vh-wwwplone.conf -SL https://svn.eionet.europa.eu/repositories/Zope/trunk/www.eea.europa.eu/trunk/etc/apache/vh-wwwplone.conf \
- && mv /docker-setup.sh /docker-base-setup.sh
-
+ && mv /docker-setup.sh /docker-base-setup.sh \
+ && sed -i 's|ServerName eeacms-apache.docker.com|ServerName www.eea.europa.eu|' /usr/local/apache2/conf/httpd.conf \
+ && sed -i 's|ServerAdmin you@example.com|helpdesk@eea.europa.eu|' /usr/local/apache2/conf/httpd.conf
 COPY docker-setup.sh /docker-setup.sh

@@ -4,6 +4,7 @@
 
 if [ ! -z "$SERVER_NAME" ]; then
   sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
+  sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" /usr/local/apache2/conf/httpd.conf
 
   SERVER_ALIAS=`echo $SERVER_NAME | sed 's/www.//g'`
   sed -i "s|ServerAlias eea.europa.eu|ServerAlias $SERVER_ALIAS|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
