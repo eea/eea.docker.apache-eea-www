@@ -15,13 +15,13 @@ fi
 # Timeout
 if [ ! -z "$APACHE_TIMEOUT" ]; then
   echo "Updating Timeout to $APACHE_TIMEOUT"
-  sed -i "s|Timeout [0-9]*|Timeout $APACHE_TIMEOUT|" /usr/local/apache2/conf/extra/httpd-default.conf
+  sed -i "s|^Timeout [0-9]*|Timeout $APACHE_TIMEOUT|" /usr/local/apache2/conf/extra/httpd-default.conf
 fi
 
 # KeepAliveTimeout
 if [ ! -z "$APACHE_KEEPALIVE_TIMEOUT" ]; then
   echo "Updating KeepAliveTimeout to $APACHE_KEEPALIVE_TIMEOUT"
-  sed -i "s|KeepAliveTimeout [0-9]*|KeepAliveTimeout $APACHE_KEEPALIVE_TIMEOUT|" /usr/local/apache2/conf/extra/httpd-default.conf
+  sed -i "s|^KeepAliveTimeout [0-9]*|KeepAliveTimeout $APACHE_KEEPALIVE_TIMEOUT|" /usr/local/apache2/conf/extra/httpd-default.conf
 fi
 
 # Default charset
