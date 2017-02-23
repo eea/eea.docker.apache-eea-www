@@ -1,4 +1,4 @@
-FROM eeacms/apache:2.4s
+FROM eeacms/apache:2.4-1.0
 MAINTAINER "European Environment Agency (EEA): IDM2 A-Team" <eea-edw-a-team-alerts@googlegroups.com>
 
 COPY traceview-setup.sh /
