@@ -10,6 +10,11 @@ if [ ! -z "$SERVER_NAME" ]; then
   SERVER_ALIAS=`echo $SERVER_NAME | sed 's/www.//g'`
   echo "Updating ServerAlias to $SERVER_ALIAS"
   sed -i "s|ServerAlias eea.europa.eu|ServerAlias $SERVER_ALIAS|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
+
+  if [[ $SERVER_NAME == *"dev"* ]]; then
+    sed -i "s|https/|http/|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
+    sed -i "s|:443|:80|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
+  fi
 fi
 
 # Timeout
