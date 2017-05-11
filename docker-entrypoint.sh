@@ -60,7 +60,7 @@ fi
 #
 # SSL
 #
-if [ ! -z "$$APACHE_ENABLE_SSL" ]; then
+if [ ! -z "$APACHE_ENABLE_SSL" ]; then
     mv /var/eea-buildout-plone4/etc/apache/vh-www-https.conf /usr/local/apache2/conf/extra/
 fi
 
