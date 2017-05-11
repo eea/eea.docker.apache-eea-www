@@ -24,6 +24,10 @@ See [eea,docker.www](https://github.com/eea/eea.docker.www) for deployment instr
 
         APACHE_KEEPALIVE_TIMEOUT=8
 
+* `APACHE_ENABLE_SSL` Also listen on port `:443`
+
+        APACHE_ENABLE_SSL=true
+
 * `TRACEVIEW` AppNeta TraceView Access Key. Please note that providing this env will trigger the installation of AppNeta tracelyzer service and required Apache modules within container. Thus, it will take more time for the container to be up-and-running on the first run.
 
         TRACEVIEW=xyzk-abcd-1234-5678

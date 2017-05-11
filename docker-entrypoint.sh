@@ -1,7 +1,5 @@
 #!/bin/bash
 
-/docker-base-setup.sh
-
 if [ ! -z "$SERVER_NAME" ]; then
   echo "Updating ServerName to $SERVER_NAME"
   sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
@@ -45,3 +43,25 @@ chown -R www-data:www-data /usr/local/apache2/conf/extra/
 chown -R www-data:www-data /var/eea-buildout-plone4/etc/
 chown -R www-data:www-data /var/local/www-logs/eea/
 chown -R www-data:www-data /var/www/html/
+
+#
+# TRACEVIEW
+#
+if [ ! -z "$TRACEVIEW" ]; then
+    TRACEVIEW_CONFIGURED=`cat /usr/local/apache2/conf/httpd.conf | grep oboe`
+    if [ -z "$TRACEVIEW_CONFIGURED" ]; then
+        sed -i 's|# LoadModule foo_module modules/mod_foo.so|LoadModule oboe_module modules/mod_oboe.so\nLoadModule oboe_ps_module modules/mod_oboe_ps_ap24.so|' /usr/local/apache2/conf/httpd.conf
+        echo 'IncludeOptional conf/extra/oboe*.conf' >> /usr/local/apache2/conf/httpd.conf
+        /usr/sbin/traceview-config $TRACEVIEW
+    fi
+    /etc/init.d/tracelyzer start
+fi
+
+#
+# SSL
+#
+if [ ! -z "$$APACHE_ENABLE_SSL" ]; then
+    mv /var/eea-buildout-plone4/etc/apache/vh-www-https.conf /usr/local/apache2/conf/extra/
+fi
+
+exec /apache-entrypoint.sh "$@"
