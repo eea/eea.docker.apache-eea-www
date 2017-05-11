@@ -4,10 +4,12 @@ if [ ! -z "$SERVER_NAME" ]; then
   echo "Updating ServerName to $SERVER_NAME"
   sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
   sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" /usr/local/apache2/conf/httpd.conf
+  sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" /var/eea-buildout-plone4/etc/apache/vh-www-https.conf
 
   SERVER_ALIAS=`echo $SERVER_NAME | sed 's/www.//g'`
   echo "Updating ServerAlias to $SERVER_ALIAS"
   sed -i "s|ServerAlias eea.europa.eu|ServerAlias $SERVER_ALIAS|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
+  sed -i "s|ServerAlias eea.europa.eu|ServerAlias $SERVER_ALIAS|g" /var/eea-buildout-plone4/etc/apache/vh-www-https.conf
 
   if [[ $SERVER_NAME == *"dev"* ]]; then
     sed -i "s|https/|http/|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
