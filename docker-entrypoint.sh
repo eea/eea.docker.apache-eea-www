@@ -63,7 +63,23 @@ fi
 # SSL
 #
 if [ ! -z "$APACHE_ENABLE_SSL" ]; then
-    mv /var/eea-buildout-plone4/etc/apache/vh-www-https.conf /usr/local/apache2/conf/extra/
+  if [ ! -e /usr/local/apache2/conf/extra/vh-www-https.conf ]; then
+    cp /var/eea-buildout-plone4/etc/apache/vh-www-https.conf /usr/local/apache2/conf/extra/
+  fi
+fi
+
+#
+# Default APACHE_MODULES
+#
+if [ -z "$APACHE_MODULES" ]; then
+  export APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module"
+fi
+
+#
+# Default APACHE_INCLUDE
+#
+if [ -z "$APACHE_INCLUDE" ]; then
+  export APACHE_INCLUDE="conf/extra/httpd-languages.conf conf/extra/httpd-default.conf"
 fi
 
 exec /apache-entrypoint.sh "$@"
