@@ -159,10 +159,6 @@
     # Due to #4836: fix for @@images
     RewriteRule ^(.*)/@@images/image/(.*) $1/image_$2 [R=permanent,L]
 
-    # Redirect for old zope glossaries URLs
-    RewriteCond %{QUERY_STRING} ^term=(.*)$
-    RewriteRule ^/terminology/concept_html$ /help/glossary#c0=all&c4=5&b_start=0&c2=%1? [R=301,NE,L]
-
     ############################################################################
     # WARNING: DO NOT add anything else bellow. Add new rules above this comment
     ############################################################################
