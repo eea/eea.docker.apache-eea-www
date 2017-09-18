@@ -158,6 +158,70 @@
 
     # Due to #4836: fix for @@images
     RewriteRule ^(.*)/@@images/image/(.*) $1/image_$2 [R=permanent,L]
+    
+    # "Countries and regions" integration, see #81581
+    ### production: 192.168.2.21:3000 
+    ### demarant vm: 10.201.1.92 ||| 87.248.32.84
+    
+    ### CaR resources
+    RewriteRule ^/countries-and-regions/car.facetview.js(.*) http://87.248.32.84:3003/car.facetview.js$1 [P,L]
+    RewriteRule ^/countries-and-regions/car.facet.js(.*) http://87.248.32.84:3003/car.facet.js$1 [P,L]
+    RewriteRule ^/countries-and-regions/car.facetview.css(.*) http://87.248.32.84:3003/car.facetview.css$1 [P,L]
+    RewriteRule ^/countries-and-regions/facetview(.*) http://87.248.32.84:3003/facetview$1 [P,L]
+    RewriteRule ^/countries-and-regions/css(.*) http://87.248.32.84:3003/css$1 [P,L]
+    RewriteRule ^/countries-and-regions/javascripts(.*) http://87.248.32.84:3003/javascripts$1 [P,L]
+    RewriteRule ^/countries-and-regions/api(.*) http://87.248.32.84:3003/api$1 [P,L]
+    RewriteRule ^/countries-and-regions/download(.*) http://87.248.32.84:3003/download$1 [P,L]
+    RewriteRule ^/countries-and-regions/images(.*) http://87.248.32.84:3003/images$1 [P,L]
+
+    ### CaR - EEA member countries
+    RewriteRule ^/countries-and-regions/austria(.*) http://87.248.32.84:3003/austria$1 [P,L]
+    RewriteRule ^/countries-and-regions/belgium(.*) http://87.248.32.84:3003/belgium$1 [P,L]
+    RewriteRule ^/countries-and-regions/bulgaria(.*) http://87.248.32.84:3003/bulgaria$1 [P,L]
+    RewriteRule ^/countries-and-regions/croatia(.*) http://87.248.32.84:3003/croatia$1 [P,L]
+    RewriteRule ^/countries-and-regions/cyprus(.*) http://87.248.32.84:3003/cyprus$1 [P,L]
+    RewriteRule ^/countries-and-regions/czech-republic(.*) http://87.248.32.84:3003/czech-republic$1 [P,L]
+    RewriteRule ^/countries-and-regions/denmark(.*) http://87.248.32.84:3003/denmark$1 [P,L]
+    RewriteRule ^/countries-and-regions/estonia(.*) http://87.248.32.84:3003/estonia$1 [P,L]
+    RewriteRule ^/countries-and-regions/finland(.*) http://87.248.32.84:3003/finland$1 [P,L]
+    RewriteRule ^/countries-and-regions/france(.*) http://87.248.32.84:3003/france$1 [P,L]
+    RewriteRule ^/countries-and-regions/germany(.*) http://87.248.32.84:3003/germany$1 [P,L]
+    RewriteRule ^/countries-and-regions/greece(.*) http://87.248.32.84:3003/greece$1 [P,L]
+    RewriteRule ^/countries-and-regions/hungary(.*) http://87.248.32.84:3003/hungary$1 [P,L]
+    RewriteRule ^/countries-and-regions/iceland(.*) http://87.248.32.84:3003/iceland$1 [P,L]
+    RewriteRule ^/countries-and-regions/ireland(.*) http://87.248.32.84:3003/ireland$1 [P,L]
+    RewriteRule ^/countries-and-regions/italy(.*) http://87.248.32.84:3003/italy$1 [P,L]
+    RewriteRule ^/countries-and-regions/latvia(.*) http://87.248.32.84:3003/latvia$1 [P,L]
+    RewriteRule ^/countries-and-regions/liechtenstein(.*) http://87.248.32.84:3003/liechtenstein$1 [P,L]
+    RewriteRule ^/countries-and-regions/lithuania(.*) http://87.248.32.84:3003/lithuania$1 [P,L]
+    RewriteRule ^/countries-and-regions/luxembourg(.*) http://87.248.32.84:3003/luxembourg$1 [P,L]
+    RewriteRule ^/countries-and-regions/malta(.*) http://87.248.32.84:3003/malta$1 [P,L]
+    RewriteRule ^/countries-and-regions/norway(.*) http://87.248.32.84:3003/norway$1 [P,L]
+    RewriteRule ^/countries-and-regions/poland(.*) http://87.248.32.84:3003/poland$1 [P,L]
+    RewriteRule ^/countries-and-regions/portugal(.*) http://87.248.32.84:3003/portugal$1 [P,L]
+    RewriteRule ^/countries-and-regions/romania(.*) http://87.248.32.84:3003/romania$1 [P,L]
+    RewriteRule ^/countries-and-regions/serbia(.*) http://87.248.32.84:3003/serbia$1 [P,L]
+    RewriteRule ^/countries-and-regions/slovakia(.*) http://87.248.32.84:3003/slovakia$1 [P,L]
+    RewriteRule ^/countries-and-regions/slovenia(.*) http://87.248.32.84:3003/slovenia$1 [P,L]
+    RewriteRule ^/countries-and-regions/spain(.*) http://87.248.32.84:3003/spain$1 [P,L]
+    RewriteRule ^/countries-and-regions/sweden(.*) http://87.248.32.84:3003/sweden$1 [P,L]
+    RewriteRule ^/countries-and-regions/switzerland(.*) http://87.248.32.84:3003/switzerland$1 [P,L]
+    RewriteRule ^/countries-and-regions/netherlands(.*) http://87.248.32.84:3003/netherlands$1 [P,L]
+    RewriteRule ^/countries-and-regions/turkey(.*) http://87.248.32.84:3003/turkey$1 [P,L]
+    RewriteRule ^/countries-and-regions/united-kingdom(.*) http://87.248.32.84:3003/united-kingdom$1 [P,L]
+
+    ### CaR - Collaborating countries
+    RewriteRule ^/countries-and-regions/albania(.*) http://87.248.32.84:3003/albania$1 [P,L]
+    RewriteRule ^/countries-and-regions/bosnia-and-herzegovina(.*) http://87.248.32.84:3003/bosnia-and-herzegovina$1 [P,L]
+    RewriteRule ^/countries-and-regions/kosovo(.*) http://87.248.32.84:3003/kosovo$1 [P,L]
+    RewriteRule ^/countries-and-regions/fyr-macedonia(.*) http://87.248.32.84:3003/fyr-macedonia$1 [P,L]
+    RewriteRule ^/countries-and-regions/montenegro(.*) http://87.248.32.84:3003/montenegro$1 [P,L]
+
+    ### CaR - Regions
+    RewriteRule ^/countries-and-regions/arctic(.*) http://87.248.32.84:3003/arctic$1 [P,L]
+    RewriteRule ^/countries-and-regions/black-sea(.*) http://87.248.32.84:3003/black-sea$1 [P,L]
+    RewriteRule ^/countries-and-regions/mediterranean(.*) http://87.248.32.84:3003/mediterranean$1 [P,L]
+
 
     ############################################################################
     # WARNING: DO NOT add anything else bellow. Add new rules above this comment
