@@ -160,9 +160,7 @@
     RewriteRule ^(.*)/@@images/image/(.*) $1/image_$2 [R=permanent,L]
     
     # "Countries and regions" integration, see #81581
-    ### production: 192.168.2.21:3000 
-    ### demarant vm: 10.201.1.92 ||| 87.248.32.84
-    
+
     ### CaR resources
     RewriteRule ^/countries-and-regions/car.facetview.js(.*) http://87.248.32.84:3003/car.facetview.js$1 [P,L]
     RewriteRule ^/countries-and-regions/car.facet.js(.*) http://87.248.32.84:3003/car.facet.js$1 [P,L]
@@ -175,7 +173,8 @@
     RewriteRule ^/countries-and-regions/images(.*) http://87.248.32.84:3003/images$1 [P,L]
 
     ### CaR - EEA member countries
-    RewriteRule ^/countries-and-regions/austria(.*) http://87.248.32.84:3003/austria$1 [P,L]
+    RewriteRule ^/countries-and-regions/austria/$ /countries-and-regions/austria [R]
+    RewriteRule ^/countries-and-regions/austria$ http://87.248.32.84:3003/austria [P,L]
     RewriteRule ^/countries-and-regions/belgium(.*) http://87.248.32.84:3003/belgium$1 [P,L]
     RewriteRule ^/countries-and-regions/bulgaria(.*) http://87.248.32.84:3003/bulgaria$1 [P,L]
     RewriteRule ^/countries-and-regions/croatia(.*) http://87.248.32.84:3003/croatia$1 [P,L]
@@ -199,7 +198,8 @@
     RewriteRule ^/countries-and-regions/norway(.*) http://87.248.32.84:3003/norway$1 [P,L]
     RewriteRule ^/countries-and-regions/poland(.*) http://87.248.32.84:3003/poland$1 [P,L]
     RewriteRule ^/countries-and-regions/portugal(.*) http://87.248.32.84:3003/portugal$1 [P,L]
-    RewriteRule ^/countries-and-regions/romania(.*) http://87.248.32.84:3003/romania$1 [P,L]
+    RewriteRule ^/countries-and-regions/romania/$ /countries-and-regions/romania [R]
+    RewriteRule ^/countries-and-regions/romania$ http://87.248.32.84:3003/romania [P,L]
     RewriteRule ^/countries-and-regions/serbia(.*) http://87.248.32.84:3003/serbia$1 [P,L]
     RewriteRule ^/countries-and-regions/slovakia(.*) http://87.248.32.84:3003/slovakia$1 [P,L]
     RewriteRule ^/countries-and-regions/slovenia(.*) http://87.248.32.84:3003/slovenia$1 [P,L]
