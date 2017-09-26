@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Server name
 if [ ! -z "$SERVER_NAME" ]; then
   echo "Updating ServerName to $SERVER_NAME"
   sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
@@ -15,6 +16,11 @@ if [ ! -z "$SERVER_NAME" ]; then
     sed -i "s|https/|http/|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
     sed -i "s|:443|:80|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
   fi
+fi
+
+# Countries and regions
+if [ ! -z "$COUNTRIES_AND_REGIONS" ]; then
+  sed -i "s|192.168.2.46:55662|$COUNTRIES_AND_REGIONS|g" /var/eea-buildout-plone4/etc/apache/vh-www-common.inc
 fi
 
 # Timeout
