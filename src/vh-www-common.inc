@@ -54,7 +54,6 @@
       AddOutputFilterByType DEFLATE application/x-httpd-eruby
       AddOutputFilterByType DEFLATE text/html
       AddOutputFilterByType DEFLATE text/javascript
-      AddOutputFilterByType DEFLATE application/javascript
     </Location>
 
     # Allow PUT and DELETE only for inline comments
