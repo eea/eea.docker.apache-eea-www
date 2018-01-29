@@ -9,7 +9,7 @@ pipeline {
             try {
               checkout scm
               sh '''docker build -t ${BUILD_TAG} .'''
-              sh '''docker run -i --name=${BUILD_TAG} apachectl configtest'''
+              sh '''docker run -i --name=${BUILD_TAG} ${BUILD_TAG} apachectl configtest'''
             } finally {
               sh "docker rm -v ${BUILD_TAG}"
               sh "docker rmi ${BUILD_TAG}"
