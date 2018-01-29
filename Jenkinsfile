@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  environment {
+    GIT_NAME = "eea.docker.apache-eea-www"
+  }
+
   stages {
     stage('Build & Test') {
       steps {
@@ -19,6 +23,23 @@ pipeline {
 
       }
     }
+
+    stage('Release') {
+      when {
+        allOf {
+          environment name: 'CHANGE_ID', value: ''
+          branch 'master'
+        }
+      }
+      steps {
+        node(label: 'docker-1.13') {
+          withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN')]) {
+            sh '''docker run -i --rm --name="$BUILD_TAG-release" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" -e GIT_TOKEN="$GITHUB_TOKEN" eeacms/gitflow'''
+          }
+        }
+      }
+    }
+
   }
 
   post {
