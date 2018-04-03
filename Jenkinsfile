@@ -8,11 +8,12 @@ pipeline {
   stages {
     stage('Build & Test') {
       steps {
-        node(label: 'docker-1.13') {
+        node(label: 'clair') {
           script {
             try {
               checkout scm
               sh '''docker build -t ${BUILD_TAG} .'''
+              sh "TMPDIR=`pwd` clair-scanner --ip=`hostname` --clair=https://clair.eea.europa.eu -t=Critical ${BUILD_TAG}"
               sh '''docker run -i --name=${BUILD_TAG} ${BUILD_TAG} apachectl configtest'''
             } finally {
               sh '''docker rm -v ${BUILD_TAG}'''
