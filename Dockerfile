@@ -76,20 +76,25 @@ RUN set -eux; \
 		zlib1g-dev \
 		make \
 		wget \
+                cmake \
+                build-essential \
 	"; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends -V $buildDeps; \
 	rm -r /var/lib/apt/lists/*; \
-	curl -L -o /tmp/v1.0.3.tar.gz https://github.com/google/brotli/archive/v1.0.3.tar.gz; \
-        cd /tmp; \
-        tar -xzvf /tmp/v1.0.3.tar.gz; \
-        cd /tmp/brotli-1.0.3; \
+        mkdir -p brotli; \
+       	wget https://github.com/google/brotli/archive/v1.0.3.tar.gz; \
+        tar -xzf v1.0.3.tar.gz -C brotli  --strip-components=1; \
+        rm v1.0.3.tar.gz; \
+        cd brotli; \
         mkdir out; \
         cd out; \
-        ../configure-cmake; \
+        ../configure-cmake --disable-debug; \
         make; \
         make test; \
         make install; \
+        cd ../.. ; \
+        rm -rf brotli; \
         \
 	ddist() { \
 		local f="$1"; shift; \
@@ -187,7 +192,11 @@ RUN runDeps=" curl libsys-syslog-perl apt-transport-https ca-certificates" \
  && rm -vf /tmp/traceview-setup.sh
 
 COPY --from=builder  /usr/local/apache2/modules/mod_brotli.so  /usr/local/apache2/modules/
-COPY --from=builder /usr/local/brotli  /usr/local/brotli
+COPY --from=builder  /usr/local/bin/brotli  /usr/local/bin/brotli
+COPY --from=builder   /usr/local/lib/libbrotli* /usr/local/lib/
+COPY --from=builder   /usr/local/include/brotli /usr/local/include/
+COPY --from=builder   /usr/local/lib/pkgconfig/libbrotli* /usr/local/lib/pkgconfig/
+
 
 
 COPY docker-entrypoint.sh /
