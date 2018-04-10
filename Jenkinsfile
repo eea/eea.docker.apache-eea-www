@@ -25,6 +25,24 @@ pipeline {
       }
     }
 
+    
+    stage('Scan used images with clair') {
+      when {
+        allOf {
+          environment name: 'CHANGE_ID', value: ''
+          branch 'master'
+        }
+      }
+      steps {
+        node(label: 'clair') {
+         script {
+           sh '''/scan_catalog_entry.sh templates/www-frontend eeacms/apache-eea-www'''
+           sh '''/scan_catalog_entry.sh templates/www-eea eeacms/apache-eea-www'''
+           }
+        }
+      }
+    }
+
     stage('Release') {
       when {
         allOf {
