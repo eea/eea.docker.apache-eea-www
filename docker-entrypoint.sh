@@ -19,9 +19,10 @@ if [ ! -z "$SERVER_NAME" ]; then
 fi
 
 # Countries and regions
-if [ ! -z "$COUNTRIES_AND_REGIONS" ]; then
-  sed -i "s|192.168.2.46:55662|$COUNTRIES_AND_REGIONS|g" /var/eea-buildout-plone4/etc/apache/vh-www-common.inc
+if [ -z "$COUNTRIES_AND_REGIONS" ]; then
+  COUNTRIES_AND_REGIONS="192.168.2.46:65344"
 fi
+sed -i "s|_countries_and_regions_|$COUNTRIES_AND_REGIONS|g" /var/eea-buildout-plone4/etc/apache/vh-www-common.inc
 
 # Timeout
 if [ ! -z "$APACHE_TIMEOUT" ]; then
