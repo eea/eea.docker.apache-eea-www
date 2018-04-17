@@ -78,7 +78,7 @@ fi
 # Default APACHE_MODULES
 #
 if [ -z "$APACHE_MODULES" ]; then
-  export APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module"
+  export APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module brotli_module"
 fi
 
 #

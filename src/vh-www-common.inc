@@ -6,6 +6,10 @@
     RequestHeader set X-Username "%{auth_username}e|%{auth_skin}e" env=auth_username
     RequestHeader set X-Username Anonymous env=!auth_username
 
+    # Brotli compression
+    BrotliCompressionQuality 10
+    BrotliCompressionWindow 22
+
     DocumentRoot /var/www-static-resources
     <Directory /var/www-static-resources>
       AllowOverride None
@@ -23,7 +27,7 @@
     RewriteRule / http://www.eea.europa.eu [L]
 
     # 81010 restrict PUT DELETE PATCH PURGE PROPFIND TRACE directly from apache
-	  TraceEnable off
+    TraceEnable off
     <Location />
         <Limit PATCH PURGE PROPFIND>
             order deny,allow
@@ -40,21 +44,21 @@
       Require all denied
     </LocationMatch>
     <Location />
-      AddOutputFilterByType DEFLATE text/plain
-      AddOutputFilterByType DEFLATE text/xml
-      AddOutputFilterByType DEFLATE application/xhtml+xml
-      AddOutputFilterByType DEFLATE text/css
-      AddOutputFilterByType DEFLATE application/xml
-      AddOutputFilterByType DEFLATE image/svg+xml
-      AddOutputFilterByType DEFLATE application/rss+xml
-      AddOutputFilterByType DEFLATE application/atom_xml
-      AddOutputFilterByType DEFLATE application/x-javascript
-      AddOutputFilterByType DEFLATE application/x-httpd-php
-      AddOutputFilterByType DEFLATE application/x-httpd-fastphp
-      AddOutputFilterByType DEFLATE application/x-httpd-eruby
-      AddOutputFilterByType DEFLATE text/html
-      AddOutputFilterByType DEFLATE text/javascript
-      AddOutputFilterByType DEFLATE application/javascript
+      AddOutputFilterByType BROTLI_COMPRESS text/plain
+      AddOutputFilterByType BROTLI_COMPRESS text/xml
+      AddOutputFilterByType BROTLI_COMPRESS application/xhtml+xml
+      AddOutputFilterByType BROTLI_COMPRESS text/css
+      AddOutputFilterByType BROTLI_COMPRESS application/xml
+      AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+      AddOutputFilterByType BROTLI_COMPRESS application/rss+xml
+      AddOutputFilterByType BROTLI_COMPRESS application/atom_xml
+      AddOutputFilterByType BROTLI_COMPRESS application/x-javascript
+      AddOutputFilterByType BROTLI_COMPRESS application/x-httpd-php
+      AddOutputFilterByType BROTLI_COMPRESS application/x-httpd-fastphp
+      AddOutputFilterByType BROTLI_COMPRESS application/x-httpd-eruby
+      AddOutputFilterByType BROTLI_COMPRESS text/html
+      AddOutputFilterByType BROTLI_COMPRESS text/javascript
+      AddOutputFilterByType BROTLI_COMPRESS application/javascript
     </Location>
 
     # Allow PUT and DELETE only for inline comments
@@ -159,7 +163,7 @@
 
     # Due to #4836: fix for @@images
     RewriteRule ^(.*)/@@images/image/(.*) $1/image_$2 [R=permanent,L]
-    
+
     # "Countries and regions" integration, see #81581
 
     ### CaR resources
