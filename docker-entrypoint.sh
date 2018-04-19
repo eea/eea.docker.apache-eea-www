@@ -55,7 +55,9 @@ chown -R www-data:www-data /var/www/html/
 #
 # BROTLI module
 #
-sed -i 's|# LoadModule foo_module modules/mod_foo.so|# LoadModule foo_module modules/mod_foo.so\nLoadModule brotli_module modules/mod_brotli.so|' /usr/local/apache2/conf/httpd.conf
+if [ -z "$(grep /usr/local/apache2/conf/httpd.conf -e brotli_module)" ]; then
+  sed -i 's|# LoadModule foo_module modules/mod_foo.so|# LoadModule foo_module modules/mod_foo.so\nLoadModule brotli_module modules/mod_brotli.so|' /usr/local/apache2/conf/httpd.conf
+fi
 
 #
 # TRACEVIEW modules
@@ -83,7 +85,7 @@ fi
 # Default APACHE_MODULES
 #
 if [ -z "$APACHE_MODULES" ]; then
-  export APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module brotli_module"
+  export APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module"
 fi
 
 #

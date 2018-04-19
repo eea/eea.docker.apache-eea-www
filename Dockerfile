@@ -169,7 +169,7 @@ RUN set -eux; \
 FROM eeacms/apache:2.4-2.3
 LABEL maintainer="European Environment Agency (EEA): IDM2 A-Team <eea-edw-a-team-alerts@googlegroups.com>"
 
-ENV APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module brotli_module" \
+ENV APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module" \
     APACHE_INCLUDE="conf/extra/httpd-languages.conf conf/extra/httpd-default.conf" \
     APACHE_TIMEOUT="120" \
     APACHE_KEEPALIVE_TIMEOUT="8" 
