@@ -154,7 +154,6 @@ RUN set -eux; \
 	; \
 	make -j "$(nproc)"; \
 	make install; \
-	ldconfig; \
 	\
 	cd ..; \
 	rm -r src man manual; \
