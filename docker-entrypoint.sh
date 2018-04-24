@@ -57,7 +57,7 @@ chown -R www-data:www-data /var/www/html/
 #
 ldconfig
 if [ -z "$(grep /usr/local/apache2/conf/httpd.conf -e brotli_module)" ]; then
-  sed -i 's|LoadModule rewrite_module modules/mod_rewrite.so|LoadModule rewrite_module modules/mod_rewrite.so\nLoadModule brotli_module modules/mod_brotli.so|' /usr/local/apache2/conf/httpd.conf
+  sed -i 's|LoadModule rewrite_module modules/mod_rewrite.so|LoadModule rewrite_module modules/mod_rewrite.so\nLoadModule brotli_module modules/mod_brotli.so\nLoadModule pagespeed_module modules/mod_pagespeed_ap24.so|' /usr/local/apache2/conf/httpd.conf
 fi
 
 #
