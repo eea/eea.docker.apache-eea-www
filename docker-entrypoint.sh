@@ -50,7 +50,9 @@ chmod +x /var/eea-buildout-plone4/etc/scripts/apache_syslog
 chown -R www-data:www-data /usr/local/apache2/conf/extra/
 chown -R www-data:www-data /var/eea-buildout-plone4/etc/
 chown -R www-data:www-data /var/local/www-logs/eea/
+chown -R www-data:www-data /var/local/www-logs/pagespeed/
 chown -R www-data:www-data /var/www/html/
+chown -R www-data:www-data /var/cache/mod_pagespeed/
 
 #
 # BROTLI module
