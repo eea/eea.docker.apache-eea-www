@@ -152,6 +152,7 @@
     RewriteCond %{REQUEST_URI} !^/@@eea\.controlpanel
     RewriteCond %{REQUEST_URI} !^/@@manage-viewlets
     RewriteCond %{REQUEST_URI} !^/@@manage-portlets
+    RewriteCond %{REQUEST_URI} !^/@@archetypes-querywidget-multipleselectionwidget
     RewriteRule ^/@@(.*) /www/@@$1 [R=permanent,L,NE]
 
     # zc.async queue 27705
