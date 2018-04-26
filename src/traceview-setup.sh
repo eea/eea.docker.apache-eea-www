@@ -18,7 +18,6 @@ echo "==========================================================================
 cp -v /usr/lib/apache2/modules/mod_oboe* /usr/local/apache2/modules/
 cp -v /etc/apache2/mods-available/oboe*.conf /usr/local/apache2/conf/extra/
 
-
 echo "================================================================================================================="
 echo "Adding pagespeed module to apache...                                                                                 "
 echo "================================================================================================================="
@@ -29,9 +28,7 @@ apt-get -f install
 
 find / -name pagespeed_js_minify*
 cp -v /usr/lib/apache2/modules/mod_pagespeed* /usr/local/apache2/modules/
-cp -v /etc/apache2/mods-available/pagespeed* /usr/local/apache2/conf/extra/
-
-
+#cp -v /etc/apache2/mods-available/pagespeed* /usr/local/apache2/conf/extra/
 
 echo "================================================================================================================="
 echo "Cleanup...                                                                                                       "
