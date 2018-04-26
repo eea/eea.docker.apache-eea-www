@@ -8,21 +8,24 @@ pipeline {
   stages {
     stage('Build & Test') {
       steps {
-        node(label: 'docker-1.13') {
+        node(label: 'clair') {
           script {
             try {
               checkout scm
-              sh '''docker build -t ${BUILD_TAG} .'''
-              sh '''docker run -i --name=${BUILD_TAG} ${BUILD_TAG} apachectl configtest'''
+              sh '''docker build -t ${BUILD_TAG,,} .'''
+              sh '''TMPDIR=`pwd` clair-scanner --ip=`hostname` --clair=https://clair.eea.europa.eu -t=Critical ${BUILD_TAG,,}'''
+              sh '''docker run -i --name=${BUILD_TAG,,} ${BUILD_TAG,,} apachectl configtest'''
             } finally {
-              sh '''docker rm -v ${BUILD_TAG}'''
-              sh '''docker rmi ${BUILD_TAG}'''
+              sh '''docker rm -v ${BUILD_TAG,,}'''
+              sh '''docker rmi ${BUILD_TAG,,}'''
             }
           }
         }
 
       }
     }
+
+
 
     stage('Release') {
       when {
@@ -32,8 +35,10 @@ pipeline {
         }
       }
       steps {
-        node(label: 'docker-1.13') {
+        node(label: 'clair') {
           withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN')]) {
+            sh '''/scan_catalog_entry.sh templates/www-frontend eeacms/apache-eea-www'''
+            sh '''/scan_catalog_entry.sh templates/www-eea eeacms/apache-eea-www'''
             sh '''docker run -i --rm --name="$BUILD_TAG-release" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" -e GIT_TOKEN="$GITHUB_TOKEN" eeacms/gitflow'''
           }
         }
