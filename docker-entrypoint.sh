@@ -52,7 +52,7 @@ chown -R www-data:www-data /var/eea-buildout-plone4/etc/
 chown -R www-data:www-data /var/local/www-logs/eea/
 chown -R www-data:www-data /var/local/www-logs/pagespeed/
 chown -R www-data:www-data /var/www/html/
-chown -R www-data:www-data /var/cache/mod_pagespeed/
+chown -R www-data:www-data /var/local/www-logs/pagespeed_cache/
 
 #
 # BROTLI module
