@@ -54,7 +54,15 @@ chown -R www-data:www-data /var/local/www-logs/eea/
 chown -R www-data:www-data /var/www/html/
 
 #
-# TRACEVIEW
+# BROTLI module
+#
+ldconfig
+if [ -z "$(grep /usr/local/apache2/conf/httpd.conf -e brotli_module)" ]; then
+  sed -i 's|LoadModule rewrite_module modules/mod_rewrite.so|LoadModule rewrite_module modules/mod_rewrite.so\nLoadModule brotli_module modules/mod_brotli.so|' /usr/local/apache2/conf/httpd.conf
+fi
+
+#
+# TRACEVIEW modules
 #
 if [ ! -z "$TRACEVIEW" ]; then
     TRACEVIEW_CONFIGURED=`cat /usr/local/apache2/conf/httpd.conf | grep oboe`
@@ -79,7 +87,7 @@ fi
 # Default APACHE_MODULES
 #
 if [ -z "$APACHE_MODULES" ]; then
-  export APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module"
+  export APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module brotli_module"
 fi
 
 #
