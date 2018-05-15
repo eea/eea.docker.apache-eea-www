@@ -18,12 +18,6 @@ if [ ! -z "$SERVER_NAME" ]; then
   fi
 fi
 
-# Countries and regions
-if [ -z "$COUNTRIES_AND_REGIONS" ]; then
-  COUNTRIES_AND_REGIONS="10.50.4.80:65344"
-fi
-sed -i "s|_countries_and_regions_|$COUNTRIES_AND_REGIONS|g" /var/eea-buildout-plone4/etc/apache/vh-www-common.inc
-
 # Timeout
 if [ ! -z "$APACHE_TIMEOUT" ]; then
   echo "Updating Timeout to $APACHE_TIMEOUT"

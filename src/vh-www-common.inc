@@ -79,7 +79,7 @@
     RewriteRule ^/.*\.php$ /404 [L]
     RewriteRule ^/.*\.asp$ /404 [L]
     RewriteRule ^/_vti_.* /404 [L]
-    RewriteRule ^/.*/Calendar/(.*)allYearEvents(.*) /404 [L]
+    RewriteRule ^/(.*)/Calendar/(.*)allYearEvents(.*) /404 [L]
 
     RewriteRule ^/index_html$ / [R=permanent,L]
     RewriteRule ^/index.htm$ / [R=permanent,L]
@@ -99,11 +99,6 @@
 
     # Rewrite the UID request
     RewriteRule ^/data-and-maps/([A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}) /data-and-maps/ds_resolveuid/$1   [R=permanent,L]
-
-    # Integration of the PAM site into a subfolder of WWW (taskman ticket #16986)
-    RewriteRule ^/themes/climate/pam http://pam.apps.eea.europa.eu [R=permanent,L]
-    RewriteRule ^/data-and-maps/pam http://pam.apps.eea.europa.eu [R=permanent,L]
-    RewriteRule ^/data-and-maps/data/data-viewers/pam  http://pam.apps.eea.europa.eu [R=permanent,L]
 
     # Template service v2 , 21 June 2012
     RewriteRule ^/templates/v2/getRequiredHead /getRequiredHead
@@ -164,104 +159,6 @@
 
     # Due to #4836: fix for @@images
     RewriteRule ^(.*)/@@images/image/(.*) $1/image_$2 [R=permanent,L]
-
-    # "Countries and regions" integration, see #81581
-
-    ### CaR resources
-    RewriteRule ^/countries-and-regions/esbootstrap_resources/(.*) http://_countries_and_regions_/esbootstrap_resources/$1 [P,L]
-    RewriteRule ^/countries-and-regions/app_resources/(.*) http://_countries_and_regions_/app_resources/$1 [P,L]
-    RewriteRule ^/countries-and-regions/tools/(.*) http://_countries_and_regions_/tools/$1 [P,L]
-
-    ### CaR - EEA member countries
-    RewriteRule ^/countries-and-regions/austria/$ /countries-and-regions/austria [R]
-    RewriteRule ^/countries-and-regions/austria$ http://_countries_and_regions_/austria [P,L]
-    RewriteRule ^/countries-and-regions/belgium/$ /countries-and-regions/belgium [R]
-    RewriteRule ^/countries-and-regions/belgium$ http://_countries_and_regions_/belgium [P,L]
-    RewriteRule ^/countries-and-regions/bulgaria/$ /countries-and-regions/bulgaria [R]
-    RewriteRule ^/countries-and-regions/bulgaria$ http://_countries_and_regions_/bulgaria [P,L]
-    RewriteRule ^/countries-and-regions/croatia/$ /countries-and-regions/croatia [R]
-    RewriteRule ^/countries-and-regions/croatia$ http://_countries_and_regions_/croatia [P,L]
-    RewriteRule ^/countries-and-regions/cyprus/$ /countries-and-regions/cyprus [R]
-    RewriteRule ^/countries-and-regions/cyprus$ http://_countries_and_regions_/cyprus [P,L]
-    RewriteRule ^/countries-and-regions/czech-republic/$ /countries-and-regions/czech-republic [R]
-    RewriteRule ^/countries-and-regions/czech-republic$ http://_countries_and_regions_/czech-republic [P,L]
-    RewriteRule ^/countries-and-regions/denmark/$ /countries-and-regions/denmark [R]
-    RewriteRule ^/countries-and-regions/denmark$ http://_countries_and_regions_/denmark [P,L]
-    RewriteRule ^/countries-and-regions/estonia/$ /countries-and-regions/estonia [R]
-    RewriteRule ^/countries-and-regions/estonia$ http://_countries_and_regions_/estonia [P,L]
-    RewriteRule ^/countries-and-regions/finland/$ /countries-and-regions/finland [R]
-    RewriteRule ^/countries-and-regions/finland$ http://_countries_and_regions_/finland [P,L]
-    RewriteRule ^/countries-and-regions/france/$ /countries-and-regions/france [R]
-    RewriteRule ^/countries-and-regions/france$ http://_countries_and_regions_/france [P,L]
-    RewriteRule ^/countries-and-regions/germany/$ /countries-and-regions/germany [R]
-    RewriteRule ^/countries-and-regions/germany$ http://_countries_and_regions_/germany [P,L]
-    RewriteRule ^/countries-and-regions/greece/$ /countries-and-regions/greece [R]
-    RewriteRule ^/countries-and-regions/greece$ http://_countries_and_regions_/greece [P,L]
-    RewriteRule ^/countries-and-regions/hungary/$ /countries-and-regions/hungary [R]
-    RewriteRule ^/countries-and-regions/hungary$ http://_countries_and_regions_/hungary [P,L]
-    RewriteRule ^/countries-and-regions/iceland/$ /countries-and-regions/iceland [R]
-    RewriteRule ^/countries-and-regions/iceland$ http://_countries_and_regions_/iceland [P,L]
-    RewriteRule ^/countries-and-regions/ireland/$ /countries-and-regions/ireland [R]
-    RewriteRule ^/countries-and-regions/ireland$ http://_countries_and_regions_/ireland [P,L]
-    RewriteRule ^/countries-and-regions/italy/$ /countries-and-regions/italy [R]
-    RewriteRule ^/countries-and-regions/italy$ http://_countries_and_regions_/italy [P,L]
-    RewriteRule ^/countries-and-regions/latvia/$ /countries-and-regions/latvia [R]
-    RewriteRule ^/countries-and-regions/latvia$ http://_countries_and_regions_/latvia [P,L]
-    RewriteRule ^/countries-and-regions/liechtenstein/$ /countries-and-regions/liechtenstein [R]
-    RewriteRule ^/countries-and-regions/liechtenstein$ http://_countries_and_regions_/liechtenstein [P,L]
-    RewriteRule ^/countries-and-regions/lithuania/$ /countries-and-regions/lithuania [R]
-    RewriteRule ^/countries-and-regions/lithuania$ http://_countries_and_regions_/lithuania [P,L]
-    RewriteRule ^/countries-and-regions/luxembourg/$ /countries-and-regions/luxembourg [R]
-    RewriteRule ^/countries-and-regions/luxembourg$ http://_countries_and_regions_/luxembourg [P,L]
-    RewriteRule ^/countries-and-regions/malta/$ /countries-and-regions/malta [R]
-    RewriteRule ^/countries-and-regions/malta$ http://_countries_and_regions_/malta [P,L]
-    RewriteRule ^/countries-and-regions/norway/$ /countries-and-regions/norway [R]
-    RewriteRule ^/countries-and-regions/norway$ http://_countries_and_regions_/norway [P,L]
-    RewriteRule ^/countries-and-regions/poland/$ /countries-and-regions/poland [R]
-    RewriteRule ^/countries-and-regions/poland$ http://_countries_and_regions_/poland [P,L]
-    RewriteRule ^/countries-and-regions/portugal/$ /countries-and-regions/portugal [R]
-    RewriteRule ^/countries-and-regions/portugal$ http://_countries_and_regions_/portugal [P,L]
-    RewriteRule ^/countries-and-regions/romania/$ /countries-and-regions/romania [R]
-    RewriteRule ^/countries-and-regions/romania$ http://_countries_and_regions_/romania [P,L]
-    RewriteRule ^/countries-and-regions/serbia/$ /countries-and-regions/serbia [R]
-    RewriteRule ^/countries-and-regions/serbia$ http://_countries_and_regions_/serbia [P,L]
-    RewriteRule ^/countries-and-regions/slovakia/$ /countries-and-regions/slovakia [R]
-    RewriteRule ^/countries-and-regions/slovakia$ http://_countries_and_regions_/slovakia [P,L]
-    RewriteRule ^/countries-and-regions/slovenia/$ /countries-and-regions/slovenia [R]
-    RewriteRule ^/countries-and-regions/slovenia$ http://_countries_and_regions_/slovenia [P,L]
-    RewriteRule ^/countries-and-regions/spain/$ /countries-and-regions/spain [R]
-    RewriteRule ^/countries-and-regions/spain$ http://_countries_and_regions_/spain [P,L]
-    RewriteRule ^/countries-and-regions/sweden/$ /countries-and-regions/sweden [R]
-    RewriteRule ^/countries-and-regions/sweden$ http://_countries_and_regions_/sweden [P,L]
-    RewriteRule ^/countries-and-regions/switzerland/$ /countries-and-regions/switzerland [R]
-    RewriteRule ^/countries-and-regions/switzerland$ http://_countries_and_regions_/switzerland [P,L]
-    RewriteRule ^/countries-and-regions/netherlands/$ /countries-and-regions/netherlands [R]
-    RewriteRule ^/countries-and-regions/netherlands$ http://_countries_and_regions_/netherlands [P,L]
-    RewriteRule ^/countries-and-regions/turkey/$ /countries-and-regions/turkey [R]
-    RewriteRule ^/countries-and-regions/turkey$ http://_countries_and_regions_/turkey [P,L]
-    RewriteRule ^/countries-and-regions/united-kingdom/$ /countries-and-regions/united-kingdom [R]
-    RewriteRule ^/countries-and-regions/united-kingdom$ http://_countries_and_regions_/united-kingdom [P,L]
-
-    ### CaR - Collaborating countries
-    RewriteRule ^/countries-and-regions/albania/$ /countries-and-regions/albania [R]
-    RewriteRule ^/countries-and-regions/albania$ http://_countries_and_regions_/albania [P,L]
-    RewriteRule ^/countries-and-regions/bosnia-and-herzegovina/$ /countries-and-regions/bosnia-and-herzegovina [R]
-    RewriteRule ^/countries-and-regions/bosnia-and-herzegovina$ http://_countries_and_regions_/bosnia-and-herzegovina [P,L]
-    RewriteRule ^/countries-and-regions/kosovo/$ /countries-and-regions/kosovo [R]
-    RewriteRule ^/countries-and-regions/kosovo$ http://_countries_and_regions_/kosovo [P,L]
-    RewriteRule ^/countries-and-regions/fyr-macedonia/$ /countries-and-regions/fyr-macedonia [R]
-    RewriteRule ^/countries-and-regions/fyr-macedonia$ http://_countries_and_regions_/fyr-macedonia [P,L]
-    RewriteRule ^/countries-and-regions/montenegro/$ /countries-and-regions/montenegro [R]
-    RewriteRule ^/countries-and-regions/montenegro$ http://_countries_and_regions_/montenegro [P,L]
-
-    ### CaR - Regions
-    RewriteRule ^/countries-and-regions/arctic/$ /countries-and-regions/arctic [R]
-    RewriteRule ^/countries-and-regions/arctic$ http://_countries_and_regions_/arctic [P,L]
-    RewriteRule ^/countries-and-regions/black-sea/$ /countries-and-regions/black-sea [R]
-    RewriteRule ^/countries-and-regions/black-sea$ http://_countries_and_regions_/black-sea [P,L]
-    RewriteRule ^/countries-and-regions/mediterranean/$ /countries-and-regions/mediterranean [R]
-    RewriteRule ^/countries-and-regions/mediterranean$ http://_countries_and_regions_/mediterranean [P,L]
-
 
     ############################################################################
     # WARNING: DO NOT add anything else bellow. Add new rules above this comment
