@@ -172,8 +172,8 @@ LABEL maintainer="European Environment Agency (EEA): IDM2 A-Team <eea-edw-a-team
 ENV APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module brotli_module" \
     APACHE_INCLUDE="conf/extra/httpd-languages.conf conf/extra/httpd-default.conf" \
     APACHE_TIMEOUT="120" \
-    APACHE_KEEPALIVE_TIMEOUT="8" 
-    
+    APACHE_KEEPALIVE_TIMEOUT="8"
+
 
 COPY src/* /tmp/
 
@@ -187,9 +187,7 @@ RUN runDeps=" curl libsys-syslog-perl apt-transport-https ca-certificates" \
  && mv /tmp/vh-www-common.inc /var/eea-buildout-plone4/etc/apache/ \
  && mv /tmp/vh-www-https.conf /var/eea-buildout-plone4/etc/apache/ \
  && mv /tmp/vh-wwwplone.conf /usr/local/apache2/conf/extra/ \
- && mv /docker-entrypoint.sh /apache-entrypoint.sh \
- && /tmp/traceview-setup.sh \
- && rm -vf /tmp/traceview-setup.sh
+ && mv /docker-entrypoint.sh /apache-entrypoint.sh
 
 COPY --from=builder  /usr/local/apache2/modules/mod_brotli.so  /usr/local/apache2/modules/
 COPY --from=builder  /usr/local/bin/brotli  /usr/local/bin/brotli
