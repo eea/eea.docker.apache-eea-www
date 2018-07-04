@@ -152,7 +152,6 @@
     RewriteCond %{REQUEST_URI} !^/@@manage-viewlets
     RewriteCond %{REQUEST_URI} !^/@@manage-portlets
     RewriteCond %{REQUEST_URI} !^/@@archetypes-querywidget-multipleselectionwidget
-    RewriteCond %{REQUEST_URI} !^/@@edit-linkeddata-homepage
     RewriteRule ^/@@(.*) /www/@@$1 [R=permanent,L,NE]
 
     # zc.async queue 27705
