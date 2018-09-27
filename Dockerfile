@@ -187,6 +187,7 @@ RUN runDeps=" curl libsys-syslog-perl apt-transport-https ca-certificates" \
  && mv /tmp/vh-www-common.inc /var/eea-buildout-plone4/etc/apache/ \
  && mv /tmp/vh-www-https.conf /var/eea-buildout-plone4/etc/apache/ \
  && mv /tmp/vh-wwwplone.conf /usr/local/apache2/conf/extra/ \
+ && mv /tmp/archive_old_logs.sh /archive_old_logs.sh \
  && mv /docker-entrypoint.sh /apache-entrypoint.sh
 
 COPY --from=builder  /usr/local/apache2/modules/mod_brotli.so  /usr/local/apache2/modules/
