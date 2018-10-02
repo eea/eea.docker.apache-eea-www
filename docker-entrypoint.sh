@@ -48,8 +48,9 @@ if [ -n "$APACHE_UNDER_PROXY" ]; then
 fi	
 
 if [ -n "$APACHE_FILE_LOGS" ] && [ "$APACHE_FILE_LOGS" == "yes" ] ; then
+  APACHE_LOGROTATE_SECS=${APACHE_LOGROTATE_SECS:-3600}	
   mkdir -p /var/log/httpd/
-  sed -i 's#/proc/self/fd/1#"|$/usr/local/apache2/bin/rotatelogs -p /archive_old_logs.sh /var/log/httpd/access_log.%Y-%m-%d-%H 3600"#' /usr/local/apache2/conf/httpd.conf
+  sed -i "s#/proc/self/fd/1#\"|$/usr/local/apache2/bin/rotatelogs -p /archive_old_logs.sh /var/log/httpd/access_log.%Y-%m-%d-%H $APACHE_LOGROTATE_SECS\"#" /usr/local/apache2/conf/httpd.conf
 fi	
 
 #
