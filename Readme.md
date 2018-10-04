@@ -27,3 +27,15 @@ See [eea,docker.www](https://github.com/eea/eea.docker.www) for deployment instr
 * `APACHE_ENABLE_SSL` Also listen on port `:443`
 
         APACHE_ENABLE_SSL=true
+
+* `APACHE_UNDER_PROXY` To enable proxy log format ( X-Forwarded-For instead of IP)
+
+        APACHE_UNDER_PROXY=any
+
+* `APACHE_FILE_LOGS` Save logs in  `/var/log/httpd/access_log.%Y-%m-%d-%H-%M` instead of stdout  
+
+        APACHE_FILE_LOGS=yes
+
+* `APACHE_LOGROTATE_SECS` Only if `APACHE_FILE_LOGS` is `yes`, will rotate the log on this interval in seconds
+
+        APACHE_LOGROTATE_SECS=3600
