@@ -44,8 +44,8 @@ RUN apt-get update \
 		libxml2 \
 	&& rm -r /var/lib/apt/lists/*
 
-ENV HTTPD_VERSION 2.4.33
-ENV HTTPD_SHA256 de02511859b00d17845b9abdd1f975d5ccb5d0b280c567da5bf2ad4b70846f05
+ENV HTTPD_VERSION 2.4.35
+ENV HTTPD_SHA256 2607c6fdd4d12ac3f583127629291e9432b247b782396a563bec5678aae69b56
 
 # https://httpd.apache.org/security/vulnerabilities_24.html
 ENV HTTPD_PATCHES=""
@@ -83,9 +83,9 @@ RUN set -eux; \
 	apt-get install -y --no-install-recommends -V $buildDeps; \
 	rm -r /var/lib/apt/lists/*; \
         mkdir -p brotli; \
-       	wget https://github.com/google/brotli/archive/v1.0.3.tar.gz; \
-        tar -xzf v1.0.3.tar.gz -C brotli  --strip-components=1; \
-        rm v1.0.3.tar.gz; \
+        wget https://github.com/google/brotli/archive/v1.0.6.tar.gz; \
+        tar -xzf v1.0.6.tar.gz -C brotli  --strip-components=1; \
+        rm v1.0.6.tar.gz; \
         cd brotli; \
         mkdir out; \
         cd out; \
@@ -95,7 +95,7 @@ RUN set -eux; \
         make install; \
         cd ../.. ; \
         rm -rf brotli; \
-        \
+	\
 	ddist() { \
 		local f="$1"; shift; \
 		local distFile="$1"; shift; \
@@ -122,9 +122,12 @@ RUN set -eux; \
 # gpg: key 995E35221AD84DFF: public key "Daniel Ruggeri (http://home.apache.org/~druggeri/) <druggeri@apache.org>" imported
 		B9E8213AEFB861AF35A41F2C995E35221AD84DFF \
 	; do \
-		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
+		( gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" \
+                || gpg --keyserver pgp.mit.edu --recv-keys "$key" \
+                || gpg --keyserver keyserver.pgp.com --recv-keys "$key" );  \
 	done; \
 	gpg --batch --verify httpd.tar.bz2.asc httpd.tar.bz2; \
+	command -v gpgconf && gpgconf --kill all || :; \
 	rm -rf "$GNUPGHOME" httpd.tar.bz2.asc; \
 	\
 	mkdir -p src; \
