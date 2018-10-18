@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DAYS_TO_KEEP=${APACHE_LOGS_DAYNR:-14}
+DAYS_TO_KEEP=${APACHE_LOGS_DAYS:-14}
 
 CURRENT_LOG=$(basename $1)
 
