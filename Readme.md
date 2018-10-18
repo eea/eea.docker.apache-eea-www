@@ -39,3 +39,11 @@ See [eea,docker.www](https://github.com/eea/eea.docker.www) for deployment instr
 * `APACHE_LOGROTATE_SECS` Only if `APACHE_FILE_LOGS` is `yes`, will rotate the log on this interval in seconds
 
         APACHE_LOGROTATE_SECS=3600
+        
+* `APACHE_LOGS_DAYNR` Only if `APACHE_FILE_LOGS` is `yes`, will delete the logs older that this number in days
+
+        APACHE_LOGS_DAYNR=14
+
+* `APACHE_NFS_LOCATION` Only if `APACHE_FILE_LOGS` is `yes`, will move all non-current logs to this location, in the directory `hostname`
+
+        APACHE_NFS_LOCATION=/apache-nfs-logs
