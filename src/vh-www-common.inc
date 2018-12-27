@@ -24,7 +24,7 @@
 
     # Avoid virtual_hosting error with multiple port numbers
     RewriteCond %{HTTP_HOST} :
-    RewriteRule / http://www.eea.europa.eu [L]
+    RewriteRule / https://www.eea.europa.eu [L]
 
     # 81010 restrict PUT DELETE PATCH PURGE PROPFIND TRACE directly from apache
     TraceEnable off
@@ -72,7 +72,7 @@
 
     # Redirect to www.
     RewriteCond %{HTTP_HOST} =eea.europa.eu
-    RewriteRule ^/(.*) %{REQUEST_SCHEME}://www.eea.europa.eu/$1 [R=permanent,L]
+    RewriteRule ^/(.*) https://www.eea.europa.eu/$1 [R=permanent,L]
 
     # Protect from illegal request
     RewriteRule ^/.*\.dll$ /404 [L]
