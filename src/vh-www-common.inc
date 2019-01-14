@@ -167,3 +167,6 @@
     RewriteCond %{REQUEST_URI} !^/errors/(.*)\.html$
     RewriteCond %{REQUEST_URI} !^/portal_css/(.*)\.css$
     RewriteCond %{REQUEST_URI} !^/portal_javascripts/(.*)\.js$
+    
+    SetEnvIf Request_URI "^/.*embed-chart" EMBED_PATH
+    Header set X-Frame-Options "SAMEORIGIN" env=!EMBED_PATH
