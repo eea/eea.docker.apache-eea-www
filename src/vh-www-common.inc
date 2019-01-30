@@ -145,7 +145,7 @@
     RewriteCond %{REQUEST_URI} !\.gif$
     RewriteCond %{REQUEST_URI} !\.css$
     RewriteCond %{REQUEST_URI} !\.js$
-    RewriteRule ^/\+\+(.*) /www/++$1 [R=permanent,L,NE]
+    RewriteRule ^/\+\+(.*)  https://%{HTTP_HOST}/www/++$1 [R=permanent,L,NE]
 
     RewriteCond %{REQUEST_URI} !^/@@rdf
     RewriteCond %{REQUEST_URI} !^/@@eea\.controlpanel
