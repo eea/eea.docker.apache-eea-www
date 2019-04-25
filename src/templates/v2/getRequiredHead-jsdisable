@@ -1,5 +1,4 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-
                 <style type="text/css">
 /* - critical.css - */
 /* https://www.eea.europa.eu/portal_css/critical.css?original=1 */
@@ -804,8 +803,8 @@ width: 50px;
 
 
 
-                    <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="css/ploneStyles1555937534068917036.css" as="style">
-                    <noscript><link rel="stylesheet" href="css/ploneStyles1555937534068917036.css" /></noscript>
+                    <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="css/ploneStyles1556216956679276943.css" as="style">
+                    <noscript><link rel="stylesheet" href="css/ploneStyles1556216956679276943.css" /></noscript>
 
 
 
@@ -819,23 +818,8 @@ width: 50px;
 
 
 
-                    <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="css/ploneStyles1555937534071053028.css" media="screen" as="style">
-                    <noscript><link rel="stylesheet" href="css/ploneStyles1555937534071053028.css" media="screen" /></noscript>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="css/ploneStyles1555937534072330952.css" as="style">
-                    <noscript><link rel="stylesheet" href="css/ploneStyles1555937534072330952.css" /></noscript>
+                    <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="css/ploneStyles1556216956682688951.css" as="style">
+                    <noscript><link rel="stylesheet" href="css/EEADesign2006/ploneStyles1556216956682688951.css" /></noscript>
 
 
 
