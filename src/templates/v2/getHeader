@@ -11,16 +11,13 @@
                     <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse">
                         <div id="portal-top">
                             <!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
 <!-- ClickTale end of Top part -->
 
 <div id="cross-site-top">
-   
+
     <ul id="portal-externalsites">
         <li id="externalsites-networks" class="eea-siteaction">
-            <a href="https://www.eea.europa.eu/lt">Tinklai</a>
+            <a href="https://www.eea.europa.eu/">Networks</a>
         </li>
     </ul>
     <div class="panel" id="tip-externalsites-networks" style="width:450px; margin-left: 10em;">
@@ -28,45 +25,45 @@ var WRInitTime=(new Date()).getTime();
         <div class="panel-content shadow">
             <div class="networkSites">
                 <dl class="">
-                    <dt>Tinklai</dt>
+                    <dt>Networks</dt>
                     <dd>
                         <ul class="eea-no-list-style">
                             <li id="externalsites-eionet">
                                 <a title="Eionet" accesskey="" href="https://www.eionet.europa.eu/">Eionet</a>
                             </li>
                             <li id="externalsites-epanet">
-                                <a title="AAA tinklas" accesskey="" href="http://epanet.pbe.eea.europa.eu/">Aplinkos apsaugos agentūros (EPA tinklas) vadovų tinklas</a>
+                                <a title="EPA network" accesskey="" href="http://epanet.pbe.eea.europa.eu/">Network of the Heads of Environment Protection Agencies (EPA network)</a>
                             </li>
                             <li id="seis-network">
-                                <a title="BIAS tinklas" accesskey="" href="https://www.eea.europa.eu/about-us/what/shared-environmental-information-system">Bendri informacijos apie aplinką sistema (BIAS)</a>
+                                <a title="SEIS network" accesskey="" href="https://www.eea.europa.eu/about-us/what/shared-environmental-information-system">Shared Environmental Information System (SEIS)</a>
                             </li>
                         </ul>
                     </dd>
                     <dt class="hiddenStructure">
-                        Daugiau tinklai
+                        More networks
                     </dt>
                     <dd style="padding-bottom: 0.5em" class="portletFooter">
-                        <a class="moreLink" href="https://www.eea.europa.eu/about-us/key-partners">ES partneriams</a>&nbsp;&nbsp;
-                        <a class="moreLink" href="https://www.eea.europa.eu/about-us/international-cooperation">Tarptautinis bendradarbiavimas</a>
+                        <a class="moreLink" href="https://www.eea.europa.eu/about-us/key-partners">EU partners</a>&nbsp;&nbsp;
+                        <a class="moreLink" href="https://www.eea.europa.eu/about-us/international-cooperation">International cooperation</a>
                     </dd>
                 </dl>
                 <dl class="">
                     <dt>
-                        Europos teminiai centrai (ETC)
+                        European Topic Centres (ETCs)
                     </dt>
                     <dd>
                         <ul class="eea-no-list-style">
                             <li>
-                                <a href="http://acm.eionet.europa.eu/">Oro tarša ir klimato kaitos mažinimas (ACM)</a>
+                                <a href="http://acm.eionet.europa.eu/">Air pollution and Climate Change mitigation (ACM)</a>
                             </li>
                             <li>
-                                <a href="http://bd.eionet.europa.eu/">Biologinės įvairovės (BD)</a>
+                                <a href="http://bd.eionet.europa.eu/">Biological Diversity (BD)</a>
                             </li>
                             <li>
-                                <a href="http://cca.eionet.europa.eu/">Klimato kaitos poveikis ir pažeidžiamumas bei prisitaikymas (CCA)</a>
+                                <a href="http://cca.eionet.europa.eu/">Climate Change Impacts, Vulnerability and Adaptation (CCA)</a>
                             </li>
                             <li>
-                                <a href="http://icm.eionet.europa.eu/">Vidaus vandenų, pakrantės ir jūrų vandenys (TCM)</a>
+                                <a href="http://icm.eionet.europa.eu/">Inland, Coastal and Marine waters (ICM)</a>
                             </li>
                             <li>
                                 <a href="http://uls.eionet.europa.eu/">Urban, Land and Soil systems (ULS)</a>
@@ -84,8 +81,14 @@ var WRInitTime=(new Date()).getTime();
 
 
        <ul id="portal-siteactions">
-           
 
+
+               <li class="eea-siteaction" id="siteaction-subscriptions">
+                   <a href="https://www.eea.europa.eu/subscription" title="Subscriptions" accesskey="">
+                                   <span class="eea-icon eea-icon-envelope"><!-- --></span>
+                       <span class="siteaction-title">Subscriptions</span>
+                   </a>
+               </li>
                <li class="eea-siteaction" id="siteaction-contactus">
                    <a href="https://www.eea.europa.eu/contact-us/" title="Contact us" accesskey="">
                                    <span class="eea-icon eea-icon-comment"><!-- --></span>
@@ -100,7 +103,7 @@ var WRInitTime=(new Date()).getTime();
                </li>
                </ul>
 
-   
+
 
         <div id="js-siteaction-panels">
             <div class="panel" id="tip-siteaction-subscriptions">
@@ -108,7 +111,7 @@ var WRInitTime=(new Date()).getTime();
                     <!-- -->
                 </div>
                 <div class="panel-content shadow">
-                    
+
                       <div>
 
 <dl class="portlet portlet-subscription">
@@ -147,7 +150,7 @@ var WRInitTime=(new Date()).getTime();
 </dl>
 
 </div>
-                    
+
                 </div>
             </div>
           <div id="tip-siteaction-formobile" class="panel">
@@ -240,74 +243,74 @@ var WRInitTime=(new Date()).getTime();
                     <!-- -->
                 </div>
                 <div class="panel-content shadow">
-                    
+
                     <ul id="chooselang" class="list-items">
-                        
+
                         <li><a href="https://www.eea.europa.eu/sq" title="Albanian">Albanian (sq)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/bg" title="Bulgarian">Български (bg)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/bs" title="Bosnian">Bosnian (bs)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/cs" title="Czech">čeština (cs)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/hr" title="Croatian">Hrvatski (hr)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/da" title="Danish">dansk (da)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/nl" title="Dutch">Nederlands (nl)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/el" title="Greek">ελληνικά (el)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/" title="English">English (en)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/et" title="Estonian">eesti (et)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/fi" title="Finnish">Suomi (fi)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/fr" title="French">Français (fr)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/de" title="German">Deutsch (de)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/hu" title="Hungarian">magyar (hu)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/is" title="Icelandic">Íslenska (is)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/it" title="Italian">italiano (it)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/lv" title="Latvian">Latviešu (lv)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/lt" title="Lithuanian">lietuvių (lt)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/mk" title="Macedonian">Macedonian (mk)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/mt" title="Maltese">Malti (mt)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/no" title="Norwegian">Norsk (no)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/pl" title="Polish">polski (pl)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/pt" title="Portuguese">Português (pt)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/ro" title="Romanian">Română (ro)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/sk" title="Slovak">slovenčina (sk)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/sl" title="Slovenian">Slovenščina (sl)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/es" title="Spanish">Español (es)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/sv" title="Swedish">Svenska (sv)</a></li>
-                        
+
                         <li><a href="https://www.eea.europa.eu/tr" title="Turkish">Türkçe (tr)</a></li>
-                        
+
                     </ul>
-                    
+
                 </div>
             </div>
 
         </div>
-        
+
 
    <div class="visualClear"><!-- &nbsp; --></div>
 </div>
@@ -315,17 +318,17 @@ var WRInitTime=(new Date()).getTime();
 
 
   <div id="popup_login_form" style="display:none;">
-    
+
 
         <dl class="portalMessage error enable_cookies_message" style="display:none">
             <dt>Error</dt>
             <dd>Cookies are not enabled. You must enable cookies before you can log in.</dd>
         </dl>
 
-        
+
 
         <div class="portalMessage informationMessage">
-            
+
                 <p>The EEA Web CMS works best with following browsers:</p>
                 <div class="cms-browsers-links">
                     <ul>
@@ -334,14 +337,14 @@ var WRInitTime=(new Date()).getTime();
                     </ul>
                     <p class="discreet">Internet Explorer is not recommended for the CMS area.</p>
                 </div>
-            
+
         </div>
 
-            <form class="enableAutoFocus login_form" method="post" action="https://www.eea.europa.eu/lt/login_form">
+            <form class="enableAutoFocus login_form" method="post" action="https://www.eea.europa.eu/login_form">
 
                 <div class="login-form">
 
-                    <input type="hidden" name="came_from" value="https://www.eea.europa.eu/lt">
+                    <input type="hidden" name="came_from" value="https://www.eea.europa.eu">
 
                     <input type="hidden" name="next">
 
@@ -364,9 +367,9 @@ var WRInitTime=(new Date()).getTime();
 
                         <label rel="__ac_name">Login Name</label>
 
-                        
 
-                        
+
+
 
                         <input type="text" size="15" name="__ac_name" value="">
 
@@ -376,12 +379,12 @@ var WRInitTime=(new Date()).getTime();
 
                         <label rel="__ac_password">Password</label>
 
-                        
+
 
                         <input type="password" size="15" name="__ac_password">
                 </div>
 
-                    
+
 
                     <div class="formControls">
 
@@ -393,9 +396,9 @@ var WRInitTime=(new Date()).getTime();
 
             </form>
 
-            
 
-            
+
+
 
             <div class="login-forgotten-password">
                 <strong>Forgot your password?</strong>
@@ -403,29 +406,29 @@ var WRInitTime=(new Date()).getTime();
                         <a href="https://www.eea.europa.eu/mail_password_form?userid=">we can send you a new one</a></span>.</p>
             </div>
 
-            
 
-        
+
+
   </div>
 
 
 <div class="eea-i18n-js hiddenElem">
-    <div id="eeaPaginationNext">kitas</div>
-    <div id="eeaPaginationPrev">ankstesnis</div>
-    <div id="eeaPaginationItems">punktai</div>
+    <div id="eeaPaginationNext">next</div>
+    <div id="eeaPaginationPrev">previous</div>
+    <div id="eeaPaginationItems">items</div>
 </div>
 
 <div id="portal-header">
     <p class="hiddenStructure">
-  <a accesskey="2" href="https://www.eea.europa.eu/lt#content">Pereiti prie turinio.</a> |
+  <a accesskey="2" href="https://www.eea.europa.eu/#content">Skip to content.</a> |
 
-  <a accesskey="6" href="https://www.eea.europa.eu/lt/getHeader#eea-portlet-navigation-tree">Pereiti prie navigacijos</a>
+  <a accesskey="6" href="https://www.eea.europa.eu/getHeader#eea-portlet-navigation-tree">Skip to navigation</a>
 </p>
 
-<h2 id="logo-lt" class="portal-logo">
+<h2 id="logo-en" class="portal-logo">
 
-    <a href="https://www.eea.europa.eu/lt" accesskey="1" id="portal-logo-link" title="European Environment Agency">
-        <img src="../img/pdflogo-lt.png" alt="European Environment Agency" id="printLogo">
+    <a href="https://www.eea.europa.eu/" accesskey="1" id="portal-logo-link" title="European Environment Agency">
+        <img src="img/pdflogo-web.png" alt="European Environment Agency" id="printLogo">
     </a>
 </h2>
 
@@ -433,16 +436,23 @@ var WRInitTime=(new Date()).getTime();
 
 <!-- THE SEARCHBOX DEFINITION -->
 <div id="portal-searchbox">
-  
+  <script>(function() {
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = 'https://www.eea.europa.eu/eea-custom-search.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+      })();</script>
   <div class="gsc-control-cse gsc-control-cse-en gsc-control-wrapper-cse">
-    <form method="get" class="gsc-search-box gsc-search-box-tools" autocomplete="off" action="https://cse.google.com/cse">
+    <form method="get" class="gsc-search-box gsc-search-box-tools" autocomplete="off" action="https://www.eea.europa.eu/eea-custom-search">
       <table class="gsc-search-box" cellspacing="0" cellpadding="0">
         <tbody><tr>
           <td class="gsc-input">
             <div class="gsc-input-box">
-              <input type="text" name="q" class="gsc-input-query" placeholder="Google Custom Search" data-tags-url="https://www.eea.europa.eu/eea-custom-search.tags">
-              <input type="hidden" name="cx" value="010617083146134556574:ymkqzb7sibw">
-            </div>
+              <input type="text" name="q" class="gsc-input-query" placeholder="Search" data-tags-url="https://www.eea.europa.eu/eea-custom-search.tags">
+
+            <input name="source" type="hidden"><div class="autocomplete-items"></div></div>
           </td>
           <td class="gsc-search-button">
             <button class="gsc-search-button gsc-search-button-v2">
@@ -457,10 +467,8 @@ var WRInitTime=(new Date()).getTime();
     </form>
   </div>
   <div class="eea-search-links">
-    <a href="http://search.apps.eea.europa.eu/" class="pull-left search_advanced_link">
-      <span>Search the catalogue</span>
-    </a>
-    <a class="pull-right search_glossary_link" href="https://www.eea.europa.eu/help/glossary">AZ Žodynėlis</a>
+
+    <a class="pull-right search_glossary_link" href="https://www.eea.europa.eu/help/glossary">A-Z Glossary</a>
   </div>
 </div>
 
@@ -470,95 +478,104 @@ var WRInitTime=(new Date()).getTime();
 
 
      <div id="globalnav-holder">
-        <h5 class="hiddenStructure">Skyriai</h5>
+        <h5 class="hiddenStructure">Sections</h5>
         <ul id="portal-globalnav" class="portal-globalnav">
 
-            
-                
 
-                
-                      <li id="portaltab-eeahome" class="plain ">
-                       <a href="http://www.eea.europa.eu/lt" title="">
-                           <span>Į pradžią</span>
-                      </a></li>
-                  
-            
-                
 
-                
-                      <li id="portaltab-themes" class="plain ">
-                       <a href="https://www.eea.europa.eu/lt/themes" title="">
-                           <span>Temos</span>
-                      </a></li>
-                  
-            
-                
+                    <li id="portaltab-eeahome" class="plain">
+                     <a href="http://www.eea.europa.eu/" title="">
+                        <span>European Environment Agency</span>
+                    </a>
+                    </li>
 
-                
-                      <li id="portaltab-countries" class="plain en_icon">
-                       <a href="https://www.eea.europa.eu/countries-and-regions" title="">
-                           <span>Countries</span>
-                      </a></li>
-                  
-            
-                
 
-                
-                      <li id="portaltab-duomenys-ir-zemelapiai" class="plain en_icon">
-                       <a href="https://www.eea.europa.eu/data-and-maps" title="">
-                           <span>Duomenys ir žemėlapiai</span>
-                      </a></li>
-                  
-            
-                
 
-                
-                      <li id="portaltab-rodikliai" class="plain en_icon">
-                       <a href="https://www.eea.europa.eu/data-and-maps/indicators/" title="">
-                           <span>Rodikliai</span>
-                      </a></li>
-                  
-            
-                
 
-                
-                      <li id="portaltab-reports" class="plain ">
-                       <a href="http://www.eea.europa.eu/lt/publications" title="">
-                           <span>Ataskaitos</span>
-                      </a></li>
-                  
-            
-                
 
-                
-                      <li id="portaltab-pressroom" class="plain ">
-                       <a href="https://www.eea.europa.eu/lt/pressroom" title="">
-                           <span>Spaudos kambarys</span>
-                      </a></li>
-                  
-            
-                
+                    <li id="portaltab-themes" class="plain">
+                     <a href="https://www.eea.europa.eu/themes" title="Explore by environmental topics">
+                        <span>Topics</span>
+                    </a>
+                    </li>
 
-                
-                      <li id="portaltab-abouteea" class="plain ">
-                       <a href="https://www.eea.europa.eu/lt/about-us" title="">
-                           <span>Apie mus</span>
-                      </a></li>
-                  
-            
-                
 
-                
-                      <li id="portaltab-europe" class="plain ">
-                       <a href="https://europa.eu/european-union/about-eu_en" title="">
-                           <span>The EEA is an agency of the European Union</span>
-                      </a></li>
-                  
-            
+
+
+
+                    <li id="portaltab-countries" class="plain">
+                     <a href="https://www.eea.europa.eu/countries-and-regions" title="">
+                        <span>Countries</span>
+                    </a>
+                    </li>
+
+
+
+
+
+                    <li id="portaltab-data-and-maps" class="plain">
+                     <a href="https://www.eea.europa.eu/data-and-maps" title="Environmental data, charts, maps, indicators and interactive data applications">
+                        <span>Data and maps</span>
+                    </a>
+                    </li>
+
+
+
+
+
+                    <li id="portaltab-indicators" class="plain">
+                     <a href="https://www.eea.europa.eu/data-and-maps/indicators/" title="">
+                        <span>Indicators</span>
+                    </a>
+                    </li>
+
+
+
+
+
+                    <li id="portaltab-reports" class="plain">
+                     <a href="https://www.eea.europa.eu/publications" title="">
+                        <span>Publications</span>
+                    </a>
+                    </li>
+
+
+
+
+
+                    <li id="portaltab-media" class="plain">
+                     <a href="https://www.eea.europa.eu/media" title="">
+                        <span>Media</span>
+                    </a>
+                    </li>
+
+
+
+
+
+                    <li id="portaltab-abouteea" class="plain">
+                     <a href="https://www.eea.europa.eu/about-us" title="">
+                        <span>About us</span>
+                    </a>
+                    </li>
+
+
+
+
+
+                    <li id="portaltab-europe" class="plain">
+                     <a href="https://europa.eu/european-union/about-eu_en" title="">
+                        <span>The EEA is an agency of the European Union</span>
+                    </a>
+                    </li>
+
+
+
+
 
             <li id="secondary-portaltabs-container">
               <ul id="secondary-portaltabs" class="plain">
-                
+
               </ul>
             </li>
         </ul>

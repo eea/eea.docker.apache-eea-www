@@ -1,17 +1,5 @@
-
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    
-        
-            
-                
-                    
-    
-        
-            
-            
-            
-            
+
                 <style type="text/css">
 /* - critical.css - */
 /* https://www.eea.europa.eu/portal_css/critical.css?original=1 */
@@ -807,77 +795,77 @@ width: 50px;
 /* */
 
 </style>
-            
-            
-        
 
-    
-        
-            
-            
-                
+
+
+
+
+
+
+
+
                     <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="css/ploneStyles1555937534068917036.css" as="style">
                     <noscript><link rel="stylesheet" href="css/ploneStyles1555937534068917036.css" /></noscript>
-                
-                
-            
-            
-            
-            
-        
 
-    
-        
-            
-            
-                
+
+
+
+
+
+
+
+
+
+
+
+
                     <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="css/ploneStyles1555937534071053028.css" media="screen" as="style">
                     <noscript><link rel="stylesheet" href="css/ploneStyles1555937534071053028.css" media="screen" /></noscript>
-                
-                
-            
-            
-            
-            
-        
 
-    
-        
-            
-            
-                
+
+
+
+
+
+
+
+
+
+
+
+
                     <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="css/ploneStyles1555937534072330952.css" as="style">
                     <noscript><link rel="stylesheet" href="css/ploneStyles1555937534072330952.css" /></noscript>
-                
-                
-            
-            
-            
-            
-        
 
-    
+
+
+
+
+
+
+
+
 
     <script type="text/javascript" async="" defer="" src="js/piwik.js"></script><script type="text/javascript">
         !function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){function e(){t.media=a}var a=t.media||"all";t.addEventListener?t.addEventListener("load",e):t.attachEvent&&t.attachEvent("onload",e),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(e,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
     </script>
-    
+
       <script type="text/javascript" src="js/raven.min.js"></script>
-    
 
 
 
-                
-                
-                    
-                    
+
+
+
+
+
                         <script type="text/javascript" src="js/external_templates_scripts.js">
                             /* load minimum js concatenated from eea */
                         </script>
-                    
+
                     <script type="text/javascript"> context_url='https://www.eea.europa.eu';</script>
-                
-            
-        
-    
+
+
+
+
 </head><body></body></html>
