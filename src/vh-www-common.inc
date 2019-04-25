@@ -170,6 +170,7 @@
     ############################################################################
     RewriteCond %{REQUEST_URI} !^/server-status$
     RewriteCond %{REQUEST_URI} !^/errors/(.*)\.html$
+    RewriteCond %{REQUEST_URI} !^/templates/v2/(.*)$
     RewriteCond %{REQUEST_URI} !^/portal_css/(.*)\.css$
     RewriteCond %{REQUEST_URI} !^/portal_javascripts/(.*)\.js$
 
