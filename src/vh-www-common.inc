@@ -101,6 +101,10 @@
     # Rewrite the UID request
     RewriteRule ^/data-and-maps/([A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}) /data-and-maps/ds_resolveuid/$1   [R=permanent,L]
 
+    # templates service v2
+    RewriteCond %{QUERY_STRING} ^jsdisable=all$
+    RewriteRule ^/templates/v2/get(.*) /templates/v2/get$1-jsdisable?
+
     # Template service v3 , 25 Apr 2019
     RewriteRule ^/templates/v3/getRequiredHead /getRequiredHead
     RewriteRule ^/templates/v3/getHeader       /getHeader
