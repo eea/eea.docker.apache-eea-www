@@ -18,6 +18,11 @@ if [ ! -z "$SERVER_NAME" ]; then
   fi
 fi
 
+# Static templates
+if [ ! -d "/var/www-static-resources/templates" ]; then
+  mv /var/www-static-templates/templates /var/www-static-resources
+fi
+
 # Timeout
 if [ ! -z "$APACHE_TIMEOUT" ]; then
   echo "Updating Timeout to $APACHE_TIMEOUT"
@@ -45,13 +50,13 @@ fi
 
 if [ -n "$APACHE_UNDER_PROXY" ]; then
   sed -i "$( grep -n CustomLog.*common /usr/local/apache2/conf/httpd.conf | cut -d: -f1)s/common/proxy/" /usr/local/apache2/conf/httpd.conf
-fi	
+fi
 
 if [ -n "$APACHE_FILE_LOGS" ] && [ "$APACHE_FILE_LOGS" == "yes" ] ; then
-  APACHE_LOGROTATE_SECS=${APACHE_LOGROTATE_SECS:-3600}	
+  APACHE_LOGROTATE_SECS=${APACHE_LOGROTATE_SECS:-3600}
   mkdir -p /var/log/httpd/
   sed -i "s#/proc/self/fd/1#\"|$/usr/local/apache2/bin/rotatelogs -p /archive_old_logs.sh /var/log/httpd/access_log.%Y-%m-%d-%H-%M $APACHE_LOGROTATE_SECS\"#" /usr/local/apache2/conf/httpd.conf
-fi	
+fi
 
 #
 # Fix permissions
