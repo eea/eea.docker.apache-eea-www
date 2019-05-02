@@ -1,34 +1,32 @@
-
-<!-- saved from url=(0051)https://www.eea.europa.eu/templates/v2/nl/getFooter -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div><div class="row">
+<div><div class="row">
     <div id="footer-wrapper">
         <div id="bg-wrapper">
 
                 <div id="portal-footer">
-                    
 
 
 
-                    
+
+
                  </div>
         </div>
     </div>
 </div>
 
 <div id="portal-colophon">
-    
+
 
     <div class="colophonWrapper">
         <div class="colophon-left">
-            
+
                 <a href="https://www.eea.europa.eu/">Europees Milieuagentschap (EMA)</a>
                 <br>
-                
+
                     Kongens Nytorv 6<br>1050 Kopenhagen K<br>Denemarken
                     <br>
                     Telefoon: +45 3336 7100
-                
-            
+
+
         </div>
 
         <div class="colophon-middle">
@@ -38,13 +36,13 @@
             </p>
 
             <p class="discreet colophon-links">
-                
+
                 Template version:
                 <a href="https://github.com/eea/eea.docker.kgs/releases">EEA Plone KGS 19.4.17</a>
             </p>
 
             <p class="discreet colophon-links">
-                
+
                 Template updated on
                 <strong>22 April 2019 12:33</strong>
                 from version <strong>19.4.15</strong>
@@ -58,10 +56,10 @@
                 <a href="https://www.eea.europa.eu/usage" title="Site statistics">Site usage</a>
                 <a href="https://github.com/eea/eea.docker.kgs/releases" title="Software-updates geschiedenis">Software-updates geschiedenis</a>
                 <a href="https://www.eea.europa.eu/code" title="Code voor ontwikkelaars">Code voor ontwikkelaars</a>
-                
+
             </p>
         </div>
-        
+
         <div class="colophon-right colophon-links">
             <span>
                 Het Europees Milieuagentschap (EMA) is een agentschap van de Europese Unie.
@@ -74,13 +72,13 @@
 
         <div class="footer-clear">&nbsp;</div>
 
-        
+
 
     </div>
     <!-- Matomo noscript -->
     <noscript><p><img src="https://matomo.eea.europa.eu/piwik.php?idsite=3&amp;rec=1" style="border:0;" alt=""/></p></noscript>
     <!-- End Matomo Code -->
-    
+
 </div>
 
 
@@ -355,4 +353,4 @@
 </script>
 
 
-</div></body></html>
+</div>

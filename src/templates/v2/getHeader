@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div id="header-holder">
+<div id="header-holder">
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -588,4 +588,3 @@
             </div>
         </div>
     </div>
-</body></html>
