@@ -1,6 +1,9 @@
 #!/bin/bash
-
-TEMPLATES=$(find /var/www-static-templates/templates -type f)
+if [ -d "/var/www-static-templates/templates" ]; then
+  TEMPLATES=$(find /var/www-static-templates/templates -type f)
+else
+  TEMPLATES=$(find /var/www-static-resources/templates -type f)
+fi
 
 # Server name
 if [ ! -z "$SERVER_NAME" ]; then
