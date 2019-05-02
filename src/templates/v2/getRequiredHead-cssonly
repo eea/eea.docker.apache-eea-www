@@ -1,4 +1,6 @@
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
                 <style type="text/css">
 /* - critical.css - */
 /* https://www.eea.europa.eu/portal_css/critical.css?original=1 */
@@ -835,17 +837,3 @@ width: 50px;
     </script>
 
       <script type="text/javascript" src="js/raven.min.js"></script>
-
-
-
-
-
-
-
-
-                        <script type="text/javascript" src="js/external_templates_scripts.js">
-                            /* load minimum js concatenated from eea */
-                        </script>
-
-                    <script type="text/javascript"> context_url='https://www.eea.europa.eu';</script>
-

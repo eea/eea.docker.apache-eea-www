@@ -108,10 +108,13 @@
     RewriteRule ^/templates/v2/(..)/fonts/(.*) /templates/v2/fonts/$2
 
     # templates service v2
-    RewriteCond %{QUERY_STRING} ^jsdisable=all$
+    RewriteCond %{QUERY_STRING} cssonly=(.+)
+    RewriteRule ^/templates/v2/getRequiredHead /templates/v2/getRequiredHead-cssonly?
+
+    RewriteCond %{QUERY_STRING} jsdisable=(.+)
     RewriteRule ^/templates/v2/getRequiredHead /templates/v2/getRequiredHead-jsdisable?
 
-    # Template service v3 , 25 Apr 2019
+    # Template service v3 , 02 May 2019
     RewriteRule ^/templates/v3/getRequiredHead /getRequiredHead
     RewriteRule ^/templates/v3/getHeader       /getHeader
     RewriteRule ^/templates/v3/getFooter       /getFooter
