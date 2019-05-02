@@ -3706,7 +3706,7 @@ width: 110px;
 font-size: 70%;
 line-height: 1.1;
 padding-left: 35px;
-background: url("//www.eea.europa.eu/globalnav-logo.png") no-repeat 10% 60%;
+background: url("https://www.eea.europa.eu/templates/v2/img/globalnav-logo.png") no-repeat 10% 60%;
 }
 #secondary-portaltabs #portaltab-europe a {
 font-weight: normal;
@@ -3714,7 +3714,7 @@ text-align: right;
 padding: 1em 0;
 }
 #portal-globalnav .en_icon {
-background: url(//www.eea.europa.eu/en_icon.png) no-repeat scroll right -1px transparent;
+background: url(https://www.eea.europa.eu/templates/v2/img/en_icon.png) no-repeat scroll right -1px transparent;
 }
 /* */
 #globalnav-holder .hiddenStructure{
