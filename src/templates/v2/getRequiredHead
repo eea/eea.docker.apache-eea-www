@@ -11,7 +11,7 @@ font-family: 'Open Sans';
 font-style: normal;
 font-weight: 400;
 font-display: swap;
-src: local('Open Sans Regular'), local('OpenSans-Regular'), url("fonts/GoogleFonts-OpenSans-Regular1-v15.woff2") format('woff2');
+src: local('Open Sans Regular'), local('OpenSans-Regular'), url("https://www.eea.europa.eu/templates/v2/fonts/GoogleFonts-OpenSans-Regular1-v15.woff2") format('woff2');
 unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* */
@@ -20,7 +20,7 @@ font-family: 'Open Sans';
 font-style: normal;
 font-weight: 400;
 font-display: swap;
-src: local('Open Sans Regular'), local('OpenSans-Regular'), url("fonts/GoogleFonts-OpenSans-Regular2-v15.woff2") format('woff2');
+src: local('Open Sans Regular'), local('OpenSans-Regular'), url("https://www.eea.europa.eu/templates/v2/fonts/GoogleFonts-OpenSans-Regular2-v15.woff2") format('woff2');
 unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* */
@@ -29,7 +29,7 @@ font-family: 'Open Sans';
 font-style: normal;
 font-weight: 700;
 font-display: swap;
-src: local('Open Sans Bold'), local('OpenSans-Bold'), url("fonts/GoogleFonts-OpenSans-Bold1-v15.woff2") format('woff2');
+src: local('Open Sans Bold'), local('OpenSans-Bold'), url("https://www.eea.europa.eu/templates/v2/fonts/GoogleFonts-OpenSans-Bold1-v15.woff2") format('woff2');
 unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* */
@@ -38,7 +38,7 @@ font-family: 'Open Sans';
 font-style: normal;
 font-weight: 700;
 font-display: swap;
-src: local('Open Sans Bold'), local('OpenSans-Bold'), url("fonts/GoogleFonts-OpenSans-Bold2-v15.woff2") format('woff2');
+src: local('Open Sans Bold'), local('OpenSans-Bold'), url("https://www.eea.europa.eu/templates/v2/fonts/GoogleFonts-OpenSans-Bold2-v15.woff2") format('woff2');
 unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @media screen {
@@ -520,7 +520,7 @@ width: 212px;
 font-size: 75%;
 vertical-align: top;
 padding-right: 92px;
-background: url("img/eu-flag.png") no-repeat 122px -3px;
+background: url("https://www.eea.europa.eu/templates/v2/img/eu-flag.png") no-repeat 122px -3px;
 }
 #portaltab-europe a {
 font-weight: normal !important;
@@ -803,8 +803,8 @@ width: 50px;
 
 
 
-                    <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="css/ploneStyles1556216956679276943.css" as="style">
-                    <noscript><link rel="stylesheet" href="css/ploneStyles1556216956679276943.css" /></noscript>
+                    <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="https://www.eea.europa.eu/templates/v2/css/ploneStyles1556216956679276943.css" as="style">
+                    <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/templates/v2/css/ploneStyles1556216956679276943.css" /></noscript>
 
 
 
@@ -818,8 +818,8 @@ width: 50px;
 
 
 
-                    <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="css/ploneStyles1556216956682688951.css" as="style">
-                    <noscript><link rel="stylesheet" href="css/ploneStyles1556216956682688951.css" /></noscript>
+                    <link rel="stylesheet" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="https://www.eea.europa.eu/templates/v2/css/ploneStyles1556216956682688951.css" as="style">
+                    <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/templates/v2/css/ploneStyles1556216956682688951.css" /></noscript>
 
 
 
@@ -828,7 +828,7 @@ width: 50px;
         !function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){function e(){t.media=a}var a=t.media||"all";t.addEventListener?t.addEventListener("load",e):t.attachEvent&&t.attachEvent("onload",e),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(e,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
     </script>
 
-      <script type="text/javascript" src="js/raven.min.js"></script>
+      <script type="text/javascript" src="https://www.eea.europa.eu/templates/v2/js/raven.min.js"></script>
 
 
 
@@ -838,8 +838,8 @@ width: 50px;
 
 
 
-    <script type="text/javascript" src="js/ploneScripts1556216698151504993.js"></script>
-    <script type="text/javascript" src="js/ploneScripts1556216698156459093.js"></script>
+    <script type="text/javascript" src="https://www.eea.europa.eu/templates/v2/js/ploneScripts1556216698151504993.js"></script>
+    <script type="text/javascript" src="https://www.eea.europa.eu/templates/v2/js/ploneScripts1556216698156459093.js"></script>
 
 
 

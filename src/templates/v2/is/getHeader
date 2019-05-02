@@ -425,7 +425,7 @@ var WRInitTime=(new Date()).getTime();
 <h2 id="logo-is" class="portal-logo">
 
     <a href="https://www.eea.europa.eu/is" accesskey="1" id="portal-logo-link" title="European Environment Agency">
-        <img src="../img/pdflogo-is.png" alt="European Environment Agency" id="printLogo">
+        <img src="https://www.eea.europa.eu/templates/v2/img/pdflogo-is.png" alt="European Environment Agency" id="printLogo">
     </a>
 </h2>
 

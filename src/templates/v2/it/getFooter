@@ -50,7 +50,7 @@
 
             <p class="discreet colophon-links">
                 <a rel="license" href="http://creativecommons.org/licenses/by/2.5/dk/deed.en_GB" title="Licenza Creative Commons Attribution">
-                    <img alt="Licenza Creative Commons Attribution" style="border-width: 0pt;" width="80" height="15" src="../img/creativecommons-by-2.5-dk-80x15.png">
+                    <img alt="Licenza Creative Commons Attribution" style="border-width: 0pt;" width="80" height="15" src="https://www.eea.europa.eu/templates/v2/img/creativecommons-by-2.5-dk-80x15.png">
                 </a>
 
                 <a href="https://www.eea.europa.eu/usage" title="Site statistics">Site usage</a>
@@ -66,7 +66,7 @@
                 <br>
                 <a href="https://www.eea.europa.eu/it/legal/">Note legali</a>
             </span>
-             <img width="50" height="37" alt="Bandiera EU" title="Bandiera dell&#39;Unione europea" src="../img/eu-flag.gif">
+             <img width="50" height="37" alt="Bandiera EU" title="Bandiera dell&#39;Unione europea" src="https://www.eea.europa.eu/templates/v2/img/eu-flag.gif">
             <br>
         </div>
 
