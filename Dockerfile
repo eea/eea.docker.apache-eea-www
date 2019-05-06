@@ -108,7 +108,7 @@ RUN set -eux; \
 			hkp://keyserver.ubuntu.com:80 \
 			pgp.mit.edu) ; do \
   		    gpg --batch --keyserver $keyserver --recv-keys "$key" && break || true ; \
-  	         done ; \	
+  	         done ; \
 	done; \
 	gpg --batch --verify httpd.tar.bz2.asc httpd.tar.bz2; \
 	command -v gpgconf && gpgconf --kill all || :; \
@@ -170,7 +170,7 @@ RUN set -eux; \
         httpd -v
 
 
-FROM eeacms/apache:2.4-2.3
+FROM eeacms/apache:2.4-2.4
 LABEL maintainer="European Environment Agency (EEA): IDM2 A-Team <eea-edw-a-team-alerts@googlegroups.com>"
 
 ENV APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module brotli_module" \
@@ -179,12 +179,12 @@ ENV APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module 
     APACHE_KEEPALIVE_TIMEOUT="8"
 
 
-COPY src/* /tmp/
+COPY src/ /tmp/
 
 RUN runDeps=" curl libsys-syslog-perl apt-transport-https ca-certificates" \
  && apt-get update \
  && apt-get install -y --no-install-recommends $runDeps \
- && mkdir -p /usr/local/apache2/conf/extra/ /var/eea-buildout-plone4/etc/apache /var/eea-buildout-plone4/etc/scripts /var/local/www-logs/eea /var/www/html /var/www-static-resources/ \
+ && mkdir -p /usr/local/apache2/conf/extra/ /var/eea-buildout-plone4/etc/apache /var/eea-buildout-plone4/etc/scripts /var/local/www-logs/eea /var/www/html /var/www-static-resources/ /var/www-static-templates \
  && sed -i 's|ServerName eeacms-apache.docker.com|ServerName www.eea.europa.eu|' /usr/local/apache2/conf/httpd.conf \
  && sed -i 's|you@example.com|helpdesk@eea.europa.eu|' /usr/local/apache2/conf/httpd.conf \
  && mv /tmp/apache_syslog /var/eea-buildout-plone4/etc/scripts/ \
@@ -192,6 +192,7 @@ RUN runDeps=" curl libsys-syslog-perl apt-transport-https ca-certificates" \
  && mv /tmp/vh-www-https.conf /var/eea-buildout-plone4/etc/apache/ \
  && mv /tmp/vh-wwwplone.conf /usr/local/apache2/conf/extra/ \
  && mv /tmp/archive_old_logs.sh /archive_old_logs.sh \
+ && mv /tmp/templates /var/www-static-templates/ \
  && mv /docker-entrypoint.sh /apache-entrypoint.sh
 
 COPY --from=builder  /usr/local/apache2/modules/mod_brotli.so  /usr/local/apache2/modules/
@@ -199,7 +200,5 @@ COPY --from=builder  /usr/local/bin/brotli  /usr/local/bin/brotli
 COPY --from=builder   /usr/local/lib/libbrotli* /usr/local/lib/
 COPY --from=builder   /usr/local/include/brotli /usr/local/include/
 COPY --from=builder   /usr/local/lib/pkgconfig/libbrotli* /usr/local/lib/pkgconfig/
-
-
 
 COPY docker-entrypoint.sh /

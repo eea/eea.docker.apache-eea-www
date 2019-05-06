@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ -d "/var/www-static-templates/templates" ]; then
+  TEMPLATES=$(find /var/www-static-templates/templates -type f)
+else
+  TEMPLATES=$(find /var/www-static-resources/templates -type f)
+fi
 
 # Server name
 if [ ! -z "$SERVER_NAME" ]; then
@@ -6,6 +11,9 @@ if [ ! -z "$SERVER_NAME" ]; then
   sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
   sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" /usr/local/apache2/conf/httpd.conf
   sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" /var/eea-buildout-plone4/etc/apache/vh-www-https.conf
+  for TEMPLATE in $TEMPLATES; do
+    sed -i "s|www.eea.europa.eu|$SERVER_NAME|g" $TEMPLATE
+  done
 
   SERVER_ALIAS=`echo $SERVER_NAME | sed 's/www.//g'`
   echo "Updating ServerAlias to $SERVER_ALIAS"
@@ -15,7 +23,15 @@ if [ ! -z "$SERVER_NAME" ]; then
   if [[ $SERVER_NAME == *"dev"* ]]; then
     sed -i "s|https/|http/|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
     sed -i "s|:443|:80|g" /usr/local/apache2/conf/extra/vh-wwwplone.conf
+    for TEMPLATE in $TEMPLATES; do
+      sed -i "s|https://$SERVER_NAME|http://$SERVER_NAME|g" $TEMPLATE
+    done
   fi
+fi
+
+# Static templates
+if [ ! -d "/var/www-static-resources/templates" ]; then
+  mv /var/www-static-templates/templates /var/www-static-resources
 fi
 
 # Timeout
@@ -45,13 +61,13 @@ fi
 
 if [ -n "$APACHE_UNDER_PROXY" ]; then
   sed -i "$( grep -n CustomLog.*common /usr/local/apache2/conf/httpd.conf | cut -d: -f1)s/common/proxy/" /usr/local/apache2/conf/httpd.conf
-fi	
+fi
 
 if [ -n "$APACHE_FILE_LOGS" ] && [ "$APACHE_FILE_LOGS" == "yes" ] ; then
-  APACHE_LOGROTATE_SECS=${APACHE_LOGROTATE_SECS:-3600}	
+  APACHE_LOGROTATE_SECS=${APACHE_LOGROTATE_SECS:-3600}
   mkdir -p /var/log/httpd/
   sed -i "s#/proc/self/fd/1#\"|$/usr/local/apache2/bin/rotatelogs -p /archive_old_logs.sh /var/log/httpd/access_log.%Y-%m-%d-%H-%M $APACHE_LOGROTATE_SECS\"#" /usr/local/apache2/conf/httpd.conf
-fi	
+fi
 
 #
 # Fix permissions

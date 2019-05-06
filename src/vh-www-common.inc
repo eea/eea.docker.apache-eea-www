@@ -19,6 +19,7 @@
     RewriteEngine On
 
     Alias /errors /var/www-static-resources/errors
+    Alias /templates /var/www-static-resources/templates
 
     LogLevel alert rewrite:info
 
@@ -100,14 +101,27 @@
     # Rewrite the UID request
     RewriteRule ^/data-and-maps/([A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}) /data-and-maps/ds_resolveuid/$1   [R=permanent,L]
 
-    # Template service v2 , 21 June 2012
-    RewriteRule ^/templates/v2/getRequiredHead /getRequiredHead
-    RewriteRule ^/templates/v2/getHeader       /getHeader
-    RewriteRule ^/templates/v2/getFooter       /getFooter
+    RewriteRule ^/templates/v2/(..)/getRequiredHead /templates/v2/getRequiredHead
+    RewriteRule ^/templates/v2/(..)/css/(.*) /templates/v2/css/$2
+    RewriteRule ^/templates/v2/(..)/js/(.*) /templates/v2/js/$2
+    RewriteRule ^/templates/v2/(..)/img/(.*) /templates/v2/img/$2
+    RewriteRule ^/templates/v2/(..)/fonts/(.*) /templates/v2/fonts/$2
 
-    RewriteRule ^/templates/v2/(..)/getRequiredHead /$1/getRequiredHead
-    RewriteRule ^/templates/v2/(..)/getHeader       /$1/getHeader
-    RewriteRule ^/templates/v2/(..)/getFooter       /$1/getFooter
+    # templates service v2
+    RewriteCond %{QUERY_STRING} cssonly=(.+)
+    RewriteRule ^/templates/v2/getRequiredHead /templates/v2/getRequiredHead-cssonly?
+
+    RewriteCond %{QUERY_STRING} jsdisable=(.+)
+    RewriteRule ^/templates/v2/getRequiredHead /templates/v2/getRequiredHead-jsdisable?
+
+    # Template service v3 , 02 May 2019
+    RewriteRule ^/templates/v3/getRequiredHead /getRequiredHead
+    RewriteRule ^/templates/v3/getHeader       /getHeader
+    RewriteRule ^/templates/v3/getFooter       /getFooter
+
+    RewriteRule ^/templates/v3/(..)/getRequiredHead /$1/getRequiredHead
+    RewriteRule ^/templates/v3/(..)/getHeader       /$1/getHeader
+    RewriteRule ^/templates/v3/(..)/getFooter       /$1/getFooter
 
     # Legal
     RewriteRule ^/coreset /data-and-maps/indicators [R,L]
@@ -165,8 +179,9 @@
     ############################################################################
     RewriteCond %{REQUEST_URI} !^/server-status$
     RewriteCond %{REQUEST_URI} !^/errors/(.*)\.html$
+    RewriteCond %{REQUEST_URI} !^/templates/v2/(.*)$
     RewriteCond %{REQUEST_URI} !^/portal_css/(.*)\.css$
     RewriteCond %{REQUEST_URI} !^/portal_javascripts/(.*)\.js$
-    
+
     SetEnvIf Request_URI "^/.*embed-chart" EMBED_PATH
     Header set X-Frame-Options "SAMEORIGIN" env=!EMBED_PATH
