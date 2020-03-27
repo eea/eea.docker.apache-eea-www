@@ -13,7 +13,7 @@ pipeline {
             try {
               checkout scm
               sh '''docker build -t ${BUILD_TAG,,} .'''
-              sh '''TMPDIR=`pwd` clair-scanner --ip=`hostname` --clair=https://clair.eea.europa.eu -t=Critical ${BUILD_TAG,,}'''
+              // sh '''TMPDIR=`pwd` clair-scanner --ip=`hostname` --clair=https://clair.eea.europa.eu -t=Critical ${BUILD_TAG,,}'''
               sh '''docker run -i --name=${BUILD_TAG,,} ${BUILD_TAG,,} apachectl configtest'''
             } finally {
               sh '''docker rm -v ${BUILD_TAG,,}'''
