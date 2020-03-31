@@ -129,9 +129,9 @@
     RewriteRule ^/disclaimer(.*) /legal/disclaimer$1 [R=permanent,L]
 
     # SOER 2015 Launch rewrite rules. Ticket #22698#note-4
-    RewriteRule ^/soer-2015$ /soer [R=permanent,L]
-    RewriteRule ^/soer-2015/$ /soer [R=permanent,L]
-    RewriteRule ^/soer-2015/view$ /soer [R=permanent,L]
+    #RewriteRule ^/soer-2015$ /soer [R=permanent,L]
+    #RewriteRule ^/soer-2015/$ /soer [R=permanent,L]
+    #RewriteRule ^/soer-2015/view$ /soer [R=permanent,L]
     #RewriteRule ^/soer-2015/soer2015_frontpage$ /soer [R=permanent,L]
 
     # Rewrite RSS to RSS2 - this should be removed once the RSS enabling issue is fixed
