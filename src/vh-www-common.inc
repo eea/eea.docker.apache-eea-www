@@ -152,6 +152,7 @@
 
     # Control panel admin pages redirect to /www/.*
     RewriteRule ^/plone_control_panel(.*) /www/@@overview-controlpanel$1 [R=permanent,L,NE]
+    RewriteRule ^/dexterity-type(.*) /www/dexterity-type$1 [R=permanent,L,NE]
     RewriteRule ^/prefs_(.*) /www/prefs_$1 [R=permanent,L,NE]
 
     RewriteCond %{REQUEST_URI} !\.png$
