@@ -53,16 +53,6 @@ if [ -z "$DEFAULT_CHARSET" ]; then
   echo "AddDefaultCharset utf-8" >> /usr/local/apache2/conf/extra/httpd-languages.conf
 fi
 
-if [ $( grep -c LogFormat.*proxy /usr/local/apache2/conf/httpd.conf ) -eq 0 ]; then
-
-   sed -i '/LogFormat.*common/a \    LogFormat \"%{X-Forwarded-For}i %l %u %t \\"%r\\" %>s %b \\"%{Referer}i\\" \\"%{User-Agent}i\\"" proxy' /usr/local/apache2/conf/httpd.conf
-
-fi
-
-if [ -n "$APACHE_UNDER_PROXY" ]; then
-  sed -i "$( grep -n CustomLog.*common /usr/local/apache2/conf/httpd.conf | cut -d: -f1)s/common/proxy/" /usr/local/apache2/conf/httpd.conf
-fi
-
 if [ -n "$APACHE_FILE_LOGS" ] && [ "$APACHE_FILE_LOGS" == "yes" ] ; then
   APACHE_LOGROTATE_SECS=${APACHE_LOGROTATE_SECS:-3600}
   mkdir -p /var/log/httpd/
