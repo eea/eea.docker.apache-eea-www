@@ -28,10 +28,6 @@ See [eea,docker.www](https://github.com/eea/eea.docker.www) for deployment instr
 
         APACHE_ENABLE_SSL=true
 
-* `APACHE_UNDER_PROXY` To enable proxy log format ( X-Forwarded-For instead of IP)
-
-        APACHE_UNDER_PROXY=any
-
 * `APACHE_FILE_LOGS` Save logs in  `/var/log/httpd/access_log.%Y-%m-%d-%H-%M` instead of stdout  
 
         APACHE_FILE_LOGS=yes
