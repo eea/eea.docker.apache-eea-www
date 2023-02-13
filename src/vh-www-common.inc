@@ -107,21 +107,34 @@
     RewriteRule ^/templates/v2/(..)/img/(.*) /templates/v2/img/$2
     RewriteRule ^/templates/v2/(..)/fonts/(.*) /templates/v2/fonts/$2
 
-    # templates service v2
+    RewriteRule ^/templates/v3/(..)/getRequiredHead /templates/v3/getRequiredHead
+    RewriteRule ^/templates/v3/(..)/css/(.*) /templates/v3/css/$2
+    RewriteRule ^/templates/v3/(..)/js/(.*) /templates/v3/js/$2
+    RewriteRule ^/templates/v3/(..)/img/(.*) /templates/v3/img/$2
+    RewriteRule ^/templates/v3/(..)/fonts/(.*) /templates/v3/fonts/$2
+
+    # EEA Template Service v2
     RewriteCond %{QUERY_STRING} cssonly=(.+)
     RewriteRule ^/templates/v2/getRequiredHead /templates/v2/getRequiredHead-cssonly?
 
     RewriteCond %{QUERY_STRING} jsdisable=(.+)
     RewriteRule ^/templates/v2/getRequiredHead /templates/v2/getRequiredHead-jsdisable?
 
-    # Template service v3 , 02 May 2019
-    RewriteRule ^/templates/v3/getRequiredHead /getRequiredHead
-    RewriteRule ^/templates/v3/getHeader       /getHeader
-    RewriteRule ^/templates/v3/getFooter       /getFooter
+    # EEA Template Service v3
+    RewriteCond %{QUERY_STRING} cssonly=(.+)
+    RewriteRule ^/templates/v3/getRequiredHead /templates/v3/getRequiredHead-cssonly?
 
-    RewriteRule ^/templates/v3/(..)/getRequiredHead /$1/getRequiredHead
-    RewriteRule ^/templates/v3/(..)/getHeader       /$1/getHeader
-    RewriteRule ^/templates/v3/(..)/getFooter       /$1/getFooter
+    RewriteCond %{QUERY_STRING} jsdisable=(.+)
+    RewriteRule ^/templates/v3/getRequiredHead /templates/v3/getRequiredHead-jsdisable?
+
+    # Template service v4 , 15 March 2023
+    RewriteRule ^/templates/v4/getRequiredHead /getRequiredHead
+    RewriteRule ^/templates/v4/getHeader       /getHeader
+    RewriteRule ^/templates/v4/getFooter       /getFooter
+
+    RewriteRule ^/templates/v4/(..)/getRequiredHead /$1/getRequiredHead
+    RewriteRule ^/templates/v4/(..)/getHeader       /$1/getHeader
+    RewriteRule ^/templates/v4/(..)/getFooter       /$1/getFooter
 
     # Legal
     RewriteRule ^/coreset /data-and-maps/indicators [R,L]
@@ -182,6 +195,7 @@
     RewriteCond %{REQUEST_URI} !^/server-status$
     RewriteCond %{REQUEST_URI} !^/errors/(.*)\.html$
     RewriteCond %{REQUEST_URI} !^/templates/v2/(.*)$
+    RewriteCond %{REQUEST_URI} !^/templates/v3/(.*)$
     RewriteCond %{REQUEST_URI} !^/portal_css/(.*)\.css$
     RewriteCond %{REQUEST_URI} !^/portal_javascripts/(.*)\.js$
 
