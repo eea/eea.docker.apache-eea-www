@@ -46,8 +46,8 @@
             
             
                 
-                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1675098189899429083.css" as="style" />
-                    <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1675098189899429083.css" /></noscript>
+                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://www.eea.europa.eu/templates/v3/css/ploneStyles1675098189899429083.css" as="style" />
+                    <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/templates/v3/css/ploneStyles1675098189899429083.css" /></noscript>
                 
                 
             
@@ -61,8 +61,8 @@
             
             
                 
-                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1675098189902081966.css" as="style" />
-                    <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1675098189902081966.css" /></noscript>
+                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://www.eea.europa.eu/templates/v3/css/ploneStyles1675098189902081966.css" as="style" />
+                    <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/templates/v3/css/ploneStyles1675098189902081966.css" /></noscript>
                 
                 
             
@@ -76,8 +76,8 @@
             
             
                 
-                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1675098189902251005.css" as="style" />
-                    <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1675098189902251005.css" /></noscript>
+                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://www.eea.europa.eu/templates/v3/css/ploneStyles1675098189902251005.css" as="style" />
+                    <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/templates/v3/css/ploneStyles1675098189902251005.css" /></noscript>
                 
                 
             
@@ -94,20 +94,11 @@
 
 
 
-                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://www.eea.europa.eu/external_templates_custom.css" as="style" />
+                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://www.eea.europa.eu/templates/v3/css/external_templates_custom.css" as="style" />
                 
 
                 
 
-                
-                    
-                        
-                        
-    <script type="text/javascript" src="https://www.eea.europa.eu/portal_javascripts/EEADesign2006/ploneScripts1675098225420269012.js"></script>
-
-                    
-                    
-                    <script type="text/javascript"> context_url='https://www.eea.europa.eu';</script>
                 
             
         
