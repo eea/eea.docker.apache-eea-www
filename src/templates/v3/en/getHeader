@@ -1,5 +1,5 @@
 
-<div id="header-holder">
+<div><div id="header-holder">
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid eea-container">
             <div class="navbar-header">
@@ -424,3 +424,4 @@ var WRInitTime=(new Date()).getTime();
     </div>
 </div>
 
+</div>
