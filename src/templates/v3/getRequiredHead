@@ -11,7 +11,7 @@
 
 /*# sourceMappingURL=critical.css.dtml.map */</style>
 
-                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://staging.eea.europa.eu/templates/v3/css/external_templates_styles.css" as="style" />
+                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://www.eea.europa.eu/templates/v3/css/external_templates_styles.css" as="style" />
 
-                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://staging.eea.europa.eu/templates/v3/css/external_templates_custom.css" as="style" />
+                    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" href="https://www.eea.europa.eu/templates/v3/css/external_templates_custom.css" as="style" />
                 
