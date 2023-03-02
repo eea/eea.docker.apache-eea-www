@@ -120,12 +120,12 @@
     RewriteCond %{QUERY_STRING} jsdisable=(.+)
     RewriteRule ^/templates/v2/getRequiredHead /templates/v2/getRequiredHead-jsdisable?
 
-    # EEA Template Service v3
-    RewriteCond %{QUERY_STRING} cssonly=(.+)
-    RewriteRule ^/templates/v3/getRequiredHead /templates/v3/getRequiredHead-cssonly?
+    ## EEA Template Service v3
+    #RewriteCond %{QUERY_STRING} cssonly=(.+)
+    #RewriteRule ^/templates/v3/getRequiredHead /templates/v3/getRequiredHead-cssonly?
 
-    RewriteCond %{QUERY_STRING} jsdisable=(.+)
-    RewriteRule ^/templates/v3/getRequiredHead /templates/v3/getRequiredHead-jsdisable?
+    #RewriteCond %{QUERY_STRING} jsdisable=(.+)
+    #RewriteRule ^/templates/v3/getRequiredHead /templates/v3/getRequiredHead-jsdisable?
 
     # Template service v4 , 15 March 2023
     RewriteRule ^/templates/v4/getRequiredHead /getRequiredHead
