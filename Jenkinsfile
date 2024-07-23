@@ -13,7 +13,7 @@ pipeline {
             try {
               checkout scm
               withCredentials([usernamePassword(credentialsId: 'jekinsdockerhub', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
-                  sh '''docker run -i --rm --name="$BUILD_TAG-release" -e DOCKERHUB_USER="$DOCKERHUB_USER" -e DOCKERHUB_PASS="$DOCKERHUB_PASS"  -e GIT_COMMIT="$GIT_COMMIT" eeacms/gitflow eeacms/apache-eea-www develop'''
+                  sh '''docker run -i --rm --name="$BUILD_TAG-release" -e DOCKERHUB_USER="$DOCKERHUB_USER" -e DOCKERHUB_PASS="$DOCKERHUB_PASS"  -e GIT_COMMIT="$GIT_COMMIT" eeacms/gitflow /dockerhub_release_wait.sh eeacms/apache-eea-www develop'''
               }
               sh '''docker pull eeacms/apache-eea-www:develop'''
               sh '''docker run -i --name=${BUILD_TAG,,} eeacms/apache-eea-www:develop apachectl configtest'''
