@@ -7,6 +7,10 @@ pipeline {
 
   stages {
     stage('Build & Test') {
+      when {
+          environment name: 'CHANGE_ID', value: ''
+          branch 'develop'
+      }
       steps {
         node(label: 'docker') {
           script {
