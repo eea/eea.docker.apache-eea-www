@@ -12,11 +12,14 @@ pipeline {
           script {
             try {
               checkout scm
-              sh '''docker build -t ${BUILD_TAG,,} .'''
-              sh '''docker run -i --name=${BUILD_TAG,,} ${BUILD_TAG,,} apachectl configtest'''
+              withCredentials([usernamePassword(credentialsId: 'jekinsdockerhub', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
+                  sh '''docker run -i --rm --name="$BUILD_TAG-release" -e DOCKERHUB_USER="$DOCKERHUB_USER" -e DOCKERHUB_PASS="$DOCKERHUB_PASS"  -e GIT_COMMIT="$GIT_COMMIT" eeacms/gitflow eeacms/apache-eea-www develop'''
+              }
+              sh '''docker pull eeacms/apache-eea-www:develop'''
+              sh '''docker run -i --name=${BUILD_TAG,,} eeacms/apache-eea-www:develop apachectl configtest'''
             } finally {
               sh '''docker rm -v ${BUILD_TAG,,}'''
-              sh '''docker rmi ${BUILD_TAG,,}'''
+              sh '''docker rmi eeacms/apache-eea-www:develop'''
             }
           }
         }
