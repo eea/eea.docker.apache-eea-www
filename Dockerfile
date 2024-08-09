@@ -1,5 +1,5 @@
 
-FROM eeacms/apache:2.4-3.2
+FROM eeacms/apache:2.4-3.3
 LABEL maintainer="European Environment Agency (EEA): IDM2 A-Team <eea-edw-a-team-alerts@googlegroups.com>"
 
 ENV APACHE_MODULES="http2_module mime_magic_module data_module unique_id_module remoteip_module negotiation_module brotli_module" \
